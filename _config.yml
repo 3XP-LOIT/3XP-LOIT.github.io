@@ -1,0 +1,11 @@
+title: root💀3xploit:~#
+description: No Machine Is 100% efficient!!!
+show_downloads: false
+show_repo: false
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-sitemap
+
+whitelist:
+  - jekyll-sitemap
