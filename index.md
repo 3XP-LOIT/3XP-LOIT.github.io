@@ -91,9 +91,9 @@ I’m always excited to chat with fellow tech enthusiasts, so feel free to reach
 
 <div class="card">
   <ul>
-    <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">[@Victortaiwo123]</a></li>
-    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3XP-LOIT" target="_blank">[github.com/3XP-LOIT]</a></li>
-    <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">[linkedin.com/in/victor-abiodun-a970712a5]</a></li>
+    <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">   @Victortaiwo123</a></li>
+    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3XP-LOIT" target="_blank">    github.com/3XP-LOIT</a></li>
+    <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">     linkedin.com/in/victor-abiodun-a970712a5</a></li>
   </ul>
 </div>
 
@@ -105,9 +105,7 @@ I document my learning process, findings, and security solutions in the form of 
 
 <div class="card">
   <ul>
-    <li><a href="https://github.com/3xpI01t/vuln-bank">🔐 Writeup 1: A Deep Dive Into Web App Security</a></li>
-    <li><a href="#">💻 Writeup 2: How I Exploited a Network Vulnerability</a></li>
-    <li><a href="#">🛡️ Writeup 3: Penetration Testing 101 – A Beginner’s Guide</a></li>
+    <li><a href="https://github.com/3xpI01t/vuln-bank">🔐 VULN-BANK: A Deep Dive Into Web App Security</a></li>
   </ul>
 </div>
 
