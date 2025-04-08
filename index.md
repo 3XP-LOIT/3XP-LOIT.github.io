@@ -77,9 +77,9 @@ Hey there! I’m a CyberSecurity enthusiast on a mission to secure the digital w
 
 <div class="card">
   <ul>
-    <li><strong>💼 Name:</strong> [Abiodun Victor]</li>
-    <li><strong>🔑 Also Known As:</strong> [3xploit]</li>
-    <li><strong>🛡️ What I Do:</strong> CTF / Ethical Hacking / Cloud Security / Programming / Penetration testing</li>
+    <li><strong>💼 Name:</strong>       Abiodun Victor  </li>
+    <li><strong>🔑 Also Known As:</strong>       3xploit</li>
+    <li><strong>🛡️ What I Do:</strong>    CTF || Ethical Hacking || Cloud Security || Programming || Penetration testing</li>
   </ul>
 </div>
 
@@ -91,9 +91,9 @@ I’m always excited to chat with fellow tech enthusiasts, so feel free to reach
 
 <div class="card">
   <ul>
-    <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">[@YourUsername](https://twitter.com/yourusername)</a></li>
-    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3XP-LOIT" target="_blank">[github.com/yourusername](https://github.com/yourusername)</a></li>
-    <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">[linkedin.com/in/yourusername]</a></li>
+    <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">[@Victortaiwo123]</a></li>
+    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3XP-LOIT" target="_blank">[github.com/3XP-LOIT]</a></li>
+    <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">[linkedin.com/in/victor-abiodun-a970712a5]</a></li>
   </ul>
 </div>
 
