@@ -77,10 +77,9 @@ Hey there! I’m a CyberSecurity enthusiast on a mission to secure the digital w
 
 <div class="card">
   <ul>
-    <li><strong>💼 Name:</strong> [Your Full Name]</li>
-    <li><strong>🔑 Also Known As:</strong> [Your Online Handle]</li>
-    <li><strong>🛡️ What I Do:</strong> CyberSecurity Specialist, Ethical Hacker, and Penetration Tester</li>
-    <li><strong>🌐 Interests:</strong> Threat Hunting, Network Security, Web App Security, and Digital Forensics</li>
+    <li><strong>💼 Name:</strong> [Abiodun Victor]</li>
+    <li><strong>🔑 Also Known As:</strong> [3xploit]</li>
+    <li><strong>🛡️ What I Do:</strong> CTF / Ethical Hacking / Cloud Security / Programming / Penetration testing</li>
   </ul>
 </div>
 
@@ -92,9 +91,9 @@ I’m always excited to chat with fellow tech enthusiasts, so feel free to reach
 
 <div class="card">
   <ul>
-    <li><strong>🐦 Twitter:</strong> <a href="https://twitter.com/yourusername" target="_blank">[@YourUsername](https://twitter.com/yourusername)</a></li>
-    <li><strong>💻 GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">[github.com/yourusername](https://github.com/yourusername)</a></li>
-    <li><strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/yourusername" target="_blank">[linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)</a></li>
+    <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">[@YourUsername](https://twitter.com/yourusername)</a></li>
+    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3xpI01t" target="_blank">[github.com/yourusername](https://github.com/yourusername)</a></li>
+    <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">[linkedin.com/in/yourusername]</a></li>
   </ul>
 </div>
 
@@ -106,7 +105,7 @@ I document my learning process, findings, and security solutions in the form of 
 
 <div class="card">
   <ul>
-    <li><a href="#">🔐 Writeup 1: A Deep Dive Into Web App Security</a></li>
+    <li><a href="https://github.com/3xpI01t/vuln-bank">🔐 Writeup 1: A Deep Dive Into Web App Security</a></li>
     <li><a href="#">💻 Writeup 2: How I Exploited a Network Vulnerability</a></li>
     <li><a href="#">🛡️ Writeup 3: Penetration Testing 101 – A Beginner’s Guide</a></li>
   </ul>
@@ -120,27 +119,9 @@ Check out some of the projects I’m working on. I love sharing my code with the
 
 <div class="card">
   <ul>
-    <li><strong>Project 1:</strong> An advanced vulnerability scanner – <a href="#">[View on GitHub](#)</a></li>
-    <li><strong>Project 2:</strong> A penetration testing toolkit – <a href="#">[View on GitHub](#)</a></li>
-    <li><strong>Project 3:</strong> Custom cybersecurity dashboard – <a href="#">[View on GitHub](#)</a></li>
+    <li><strong>Project 1:</strong> A basic network scanner – <a href="https://github.com/3xpI01t/Network_scanner">[View on GitHub](#)</a></li>
   </ul>
 </div>
-
-* * *
-
-### 📝 Latest Blog Posts
-
-Stay updated with my blog for the latest trends, tools, and tutorials in the world of CyberSecurity:
-
-<div class="card">
-  <ul>
-    <li><a href="#">🔍 How to Secure Your Web Application from Common Vulnerabilities</a></li>
-    <li><a href="#">💡 Why Ethical Hacking Is Vital in Today’s Digital World</a></li>
-    <li><a href="#">🔒 Top 5 Cybersecurity Tools You Should Be Using Right Now</a></li>
-  </ul>
-</div>
-
-* * *
 
 ### 🤝 Let's Collaborate!
 
