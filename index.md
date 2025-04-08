@@ -92,7 +92,7 @@ I’m always excited to chat with fellow tech enthusiasts, so feel free to reach
 <div class="card">
   <ul>
     <li><strong>🐦 Twitter:</strong> <a href="https://x.com/Victortaiwo123" target="_blank">[@YourUsername](https://twitter.com/yourusername)</a></li>
-    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3xpI01t" target="_blank">[github.com/yourusername](https://github.com/yourusername)</a></li>
+    <li><strong>💻 GitHub:</strong> <a href="https://github.com/3XP-LOIT" target="_blank">[github.com/yourusername](https://github.com/yourusername)</a></li>
     <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5" target="_blank">[linkedin.com/in/yourusername]</a></li>
   </ul>
 </div>
