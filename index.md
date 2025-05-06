@@ -105,7 +105,7 @@ I document my learning process, findings, and security solutions in the form of 
 
 <div class="card">
   <ul>
-    <li><a href="https://github.com/3xpI01t/vuln-bank">🔐 VULN-BANK: A Deep Dive Into Web App Security</a></li>
+    <li><a href="https://medium.com/@3xploit/vuln-bank-a-penetration-testing-lab-experience-76662839b4b5">🔐 VULN-BANK: A Deep Dive Into Web App Security</a></li>
   </ul>
 </div>
 
