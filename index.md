@@ -1,213 +1,87 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: #1a1a1a;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-    header {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-    nav {
-      background: #141414;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-    nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00adb5;
-    }
-    section {
-      padding: 4rem 10%;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #fff;
-    }
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .project-card {
-      background: #262626;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      padding: 1.5rem;
-      transition: transform 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .skills ul, .tools ul, .certs ul, .downloads ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .skills li, .tools li, .certs li, .downloads li {
-      background: #333;
-      color: #e0e0e0;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      border: 1px solid #444;
-    }
-    .downloads a {
-      color: #00adb5;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .downloads a:hover {
-      color: #007780;
-    }
-    .contact {
-      text-align: center;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 0.5rem;
-      text-decoration: none;
-      color: #00adb5;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    .contact a:hover {
-      color: #007780;
-    }
-    footer {
-      background: #0d0d0d;
-      color: #777;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>Abiodun Victor Taiwo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>My Cybersecurity Portfolio</h1>
-    <p>Pentester | Security Researcher | Cybersecurity Enthusiast</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#labs">Labs & Writeups</a>
-    <a href="#tools">Tools</a>
-    <a href="#certs">Certifications</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#contact">Contact</a>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-gray-900 p-4 flex justify-between items-center shadow">
+    <h1 class="text-xl font-bold text-green-400">My Portfolio</h1>
+    <div>
+      <a href="#about" class="mx-2 hover:text-green-400">About</a>
+      <a href="#skills" class="mx-2 hover:text-green-400">Skills</a>
+      <a href="#writeups" class="mx-2 hover:text-green-400">Writeups</a>
+      <a href="#certifications" class="mx-2 hover:text-green-400">Certifications</a>
+      <a href="#downloads" class="mx-2 hover:text-green-400">Downloads</a>
+      <a href="#contact" class="mx-2 hover:text-green-400">Contact</a>
+    </div>
   </nav>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm a cybersecurity professional specializing in penetration testing and ethical hacking. I enjoy exploring attack surfaces, exploiting vulnerabilities, and sharing my knowledge through labs and writeups.</p>
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gray-800">
+    <h2 class="text-4xl font-bold text-green-400 mb-4">Pentester & Security Researcher</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">I specialize in penetration testing, red teaming, and security research. Here you'll find my labs, writeups, tools, and certifications.</p>
   </section>
 
-  <section id="labs">
-    <h2>Labs & Writeups</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>HackTheBox</h3>
-        <p>My profile showcasing solved boxes and challenges. <a href="#">View Profile</a></p>
-      </div>
-      <div class="project-card">
-        <h3>TryHackMe</h3>
-        <p>Learning-based labs and certifications. <a href="#">View Profile</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Blog Writeups</h3>
-        <p>Detailed walkthroughs of labs, exploits, and real-world security concepts. <a href="#">Visit Blog</a></p>
-      </div>
-    </div>
+  <!-- About Section -->
+  <section id="about" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">About Me</h2>
+    <p class="text-gray-300">I’m a cybersecurity enthusiast and penetration tester with experience in web application testing, cloud penetration testing and Active Directory hacking. My focus is on identifying vulnerabilities and strengthening defenses through practical assessments.</p>
   </section>
 
-  <section id="tools" class="tools">
-    <h2>Tools & Skills</h2>
-    <ul>
-      <li>Burp Suite</li>
-      <li>Nmap</li>
-      <li>Metasploit</li>
-      <li>Wireshark</li>
-      <li>BloodHound</li>
-      <li>Active Directory Attacks</li>
-      <li>Web App Pentesting</li>
-      <li>Exploit Development</li>
+  <!-- Skills Section -->
+  <section id="skills" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Skills & Tools</h2>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li>Web Application Testing (Burp Suite, OWASP ZAP)</li>
+      <li>Active Directory Exploitation</li>
+      <li>Linux & Windows Privilege Escalation</li>
+      <li>Networking & Protocol Analysis (Wireshark, Nmap)</li>
+      <li>Exploit Development Basics</li>
     </ul>
   </section>
 
-  <section id="certs" class="certs">
-    <h2>Certifications</h2>
-    <ul>
-      <li>OSCP (Planned)</li>
-      <li>eJPT</li>
-      <li>CEH</li>
+  <!-- Writeups Section -->
+  <section id="writeups" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Writeups</h2>
+    <p class="mb-4 text-gray-300">Explore my practical walkthroughs and penetration testing challenges.</p>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li><a href="htb/index.html" class="text-green-400 hover:underline">HackTheBox</a></li>
+      <li><a href="thm/index.html" class="text-green-400 hover:underline">TryHackMe</a></li>
     </ul>
   </section>
 
-  <section id="downloads" class="downloads">
-    <h2>Downloads</h2>
-    <ul>
-      <li><a href="cv.pdf" download>Download My CV</a></li>
-      <li><a href="sample_pentest_report.pdf" download>Sample Pentest Report</a></li>
+  <!-- Certifications Section -->
+  <section id="certifications" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Certifications</h2>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li>CRTA (Certified Red Team Analyst)</li>
+      <li>CAP (Certified Appsec Practitioner)</li>
+      <li>CNSP (Certified Network Security Practitioner)</li>
     </ul>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me through the following platforms:</p>
-    <a href="mailto:youremail@example.com">Email</a>
-    <a href="https://github.com/yourusername">GitHub</a>
-    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+  <!-- Downloads Section -->
+  <section id="downloads" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Downloads</h2>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li><a href="cv.pdf" class="text-green-400 hover:underline">My CV</a></li>
+      <li><a href="sample_pentest_report.pdf" class="text-green-400 hover:underline">Sample Pentest Report</a></li>
+    </ul>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  <!-- Contact Section -->
+  <section id="contact" class="p-8 max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Contact</h2>
+    <p class="text-gray-300">Feel free to reach out for collaborations or security projects.</p>
+    <p class="mt-4"><a href="mailto:victorolatunde656@gmail.com" class="text-green-400 hover:underline">victorolatunde656@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center p-4 mt-8 text-gray-500">
+    © 2025 Abiodun Victor Taiwo | Cybersecurity Portfolio
   </footer>
 </body>
 </html>
