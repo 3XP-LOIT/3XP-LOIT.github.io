@@ -1,11 +1,19 @@
-title: root💀3xploit:~#
-description: No Machine Is 100% efficient!!!
-show_downloads: false
-show_repo: false
-theme: jekyll-theme-hacker
+title: "My Cybersecurity Portfolio"
+description: "Pentester | Security Researcher | Cybersecurity Enthusiast"
+author: "Your Name"
+email: youremail@example.com
+baseurl: "" # keep empty for user.github.io
+url: "https://yourusername.github.io"
 
-gems:
-  - jekyll-sitemap
+# Theme settings
+theme: jekyll-theme-cayman  # You can change to: minimal, hacker, slate, etc.
 
-whitelist:
-  - jekyll-sitemap
+# Social links
+github_username: yourusername
+linkedin_username: yourprofile
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
