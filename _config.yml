@@ -2,18 +2,12 @@ title: "My Cybersecurity Portfolio"
 description: "Pentester | Security Researcher | Cybersecurity Enthusiast"
 author: "Your Name"
 email: youremail@example.com
-baseurl: "" # keep empty for user.github.io
+baseurl: "" # leave empty for user.github.io
 url: "https://yourusername.github.io"
 
-# Theme settings
-theme: jekyll-theme-cayman  # You can change to: minimal, hacker, slate, etc.
+# Prevent GitHub Pages from trying to apply a theme
+theme: null
 
-# Social links
-github_username: yourusername
-linkedin_username: yourprofile
-
-# Build settings
-markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
