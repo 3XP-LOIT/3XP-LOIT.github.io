@@ -122,7 +122,7 @@
 </head>
 <body>
   <header>
-    <h1>My Cybersecurity Portfolio</h1>
+    <h1>Abiodun Victor Taiwo</h1>
     <p>Pentester | Security Researcher | Cybersecurity Enthusiast</p>
   </header>
 
@@ -136,7 +136,7 @@
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Hello! I'm a cybersecurity professional specializing in penetration testing and ethical hacking. I enjoy exploring attack surfaces, exploiting vulnerabilities, and sharing my knowledge through labs and writeups.</p>
+    <p>Hello! I'm a cybersecurity professional specializing in penetration testing and ethical hacking. I enjoy exploring attack surfaces, exploiting vulnerabilities, and sharing my knowledge.</p>
   </section>
 
   <section id="labs">
@@ -157,45 +157,54 @@
       <div class="project-card">
         <h3>Blog Writeups</h3>
         <p>Detailed walkthroughs of labs, exploits, and real-world security concepts. 
-          <a href="#">Visit Blog</a>
+          <a href="https://medium.com/@3xploit">Visit Blog</a>
         </p>
       </div>
     </div>
   </section>
 
-  <section id="tools" class="tools">
-    <h2>Tools & Skills</h2>
-    <ul>
-      <li>Burp Suite</li>
-      <li>Nmap</li>
-      <li>Metasploit</li>
-      <li>Wireshark</li>
-      <li>BloodHound</li>
-      <li>Active Directory Attacks</li>
-      <li>Web App Pentesting</li>
-      <li>Exploit Development</li>
+  <!-- Skills Section -->
+  <section id="skills" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Skills</h2>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li>Web Application Testing</li>
+      <li>Active Directory Exploitation</li>
+      <li>Linux & Windows Privilege Escalation</li>
+      <li>Networking & Protocol Analysis</li>
+      <li>Exploit Development Basics</li>
+    </ul>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-green-400 mb-4">Tools</h2>
+    <p class="text-gray-300 mb-4">Here are some tools I’ve built or contributed to. You can find the full list on my GitHub.</p>
+    <ul class="list-disc ml-6 text-gray-300">
+      <li><a href="https://github.com/yourusername/tool1" class="text-green-400 hover:underline">Tool 1</a> – A custom scanner for XYZ</li>
+      <li><a href="https://github.com/yourusername/tool2" class="text-green-400 hover:underline">Tool 2</a> – Automates recon and enumeration</li>
+      <li><a href="https://github.com/yourusername" class="text-green-400 hover:underline">More on GitHub</a></li>
     </ul>
   </section>
 
   <section id="certs" class="certs">
     <h2>Certifications</h2>
     <ul>
-      <li>OSCP (Planned)</li>
-      <li>eJPT</li>
-      <li>CEH</li>
+      <li>CRTA (Certified Red Team Analyst)</li>
+      <li>CAP</li>
+      <li>CNSP</li>
     </ul>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <p>You can reach me through the following platforms:</p>
-    <a href="mailto:youremail@example.com">Email</a>
-    <a href="https://github.com/yourusername">GitHub</a>
-    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+    <a href="mailto:victorolatunde656@gmail.com">Email</a>
+    <a href="https://github.com/3XP-LOIT">GitHub</a>
+    <a href="https://www.linkedin.com/in/victor-abiodun-a970712a5?">LinkedIn</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Abiodun Victor Taiwo. All rights reserved.</p>
   </footer>
 </body>
 </html>
