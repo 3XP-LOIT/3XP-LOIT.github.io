@@ -6,120 +6,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: #1a1a1a;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-    header {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-    nav {
-      background: #141414;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-    nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00adb5;
-    }
-    section {
-      padding: 4rem 10%;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #fff;
-    }
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .project-card {
-      background: #262626;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      padding: 1.5rem;
-      transition: transform 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .skills ul, .tools ul, .certs ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .skills li, .tools li, .certs li {
-      background: #333;
-      color: #e0e0e0;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      border: 1px solid #444;
-    }
-    .contact {
-      text-align: center;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 0.5rem;
-      text-decoration: none;
-      color: #00adb5;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    .contact a:hover {
-      color: #007780;
-    }
-    footer {
-      background: #0d0d0d;
-      color: #777;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-  </style>
+  /* Skills */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .skill-badge {
+    background: #111;            /* deep black */
+    color: #9ca3af;             /* Tailwind gray-400 */
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #1f2937;  /* Tailwind gray-800 border */
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .skill-badge:hover {
+    background: #1f2937;        /* Tailwind gray-800 */
+    color: #10b981;             /* Tailwind green-500 */
+  }
+
+  /* Tools */
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .tool-card {
+    background: #111;            /* dark background */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1f2937;  /* subtle dark border */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    transition: all 0.2s ease;
+  }
+  .tool-card:hover {
+    border-color: #10b981;      /* green glow on hover */
+    transform: translateY(-4px);
+  }
+  .tool-card h3 {
+    margin: 0 0 10px;
+    color: #10b981;             /* green title */
+    font-size: 18px;
+  }
+  .tool-card p {
+    color: #d1d5db;             /* Tailwind gray-300 */
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  .tool-card a {
+    color: #10b981;             /* green links */
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .tool-card a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
   <header>
