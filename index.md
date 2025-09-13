@@ -164,31 +164,30 @@
   </section>
 
   <!-- Skills Section -->
- <section id="skills" class="p-8 max-w-4xl mx-auto">
-   <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Skills</h2>
-   <div class="flex flex-wrap gap-3 justify-center">
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Web Application Testing</span>
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Active Directory Exploitation</span>
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Linux Privilege Escalation</span>
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Windows Privilege Escalation</span>
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Networking & Protocol Analysis</span>
-     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Exploit Development Basics</span>
-   </div>
- </section>
+<section id="skills" class="p-8 max-w-5xl mx-auto">
+  <h2 class="text-2xl font-bold text-green-400 mb-8 text-center">Skills</h2>
+  <div class="flex flex-wrap gap-4 justify-center">
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Web Application Testing</span>
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Active Directory Exploitation</span>
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Linux Privilege Escalation</span>
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Windows Privilege Escalation</span>
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Networking & Protocol Analysis</span>
+    <span class="px-5 py-2 rounded-full bg-black text-gray-300 border border-gray-700 shadow-md hover:shadow-green-500/30 hover:text-green-400 transition">Exploit Development Basics</span>
+  </div>
+</section>
 
-
-  <!-- Tools Section -->
-  <section id="tools" class="p-8 max-w-5xl mx-auto">
-  <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Tools</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="bg-gray-800 p-5 rounded-lg shadow hover:shadow-lg transition">
-      <h3 class="text-xl font-semibold text-gray-100">Tool 1</h3>
-      <p class="text-gray-400 mb-2">A custom scanner for XYZ.</p>
+<!-- Tools Section -->
+<section id="tools" class="p-8 max-w-6xl mx-auto">
+  <h2 class="text-2xl font-bold text-green-400 mb-8 text-center">Tools</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 shadow-md hover:shadow-green-500/20 hover:-translate-y-2 transition transform">
+      <h3 class="text-lg font-semibold text-green-400 mb-2">Tool 1</h3>
+      <p class="text-gray-400 mb-4">A custom scanner for XYZ.</p>
       <a href="https://github.com/yourusername/tool1" class="text-green-400 hover:underline">View on GitHub</a>
     </div>
-    <div class="bg-gray-800 p-5 rounded-lg shadow hover:shadow-lg transition">
-      <h3 class="text-xl font-semibold text-gray-100">Tool 2</h3>
-      <p class="text-gray-400 mb-2">Automates recon and enumeration.</p>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 shadow-md hover:shadow-green-500/20 hover:-translate-y-2 transition transform">
+      <h3 class="text-lg font-semibold text-green-400 mb-2">Tool 2</h3>
+      <p class="text-gray-400 mb-4">Automates recon and enumeration.</p>
       <a href="https://github.com/yourusername/tool2" class="text-green-400 hover:underline">View on GitHub</a>
     </div>
     <!-- Add more tool cards as needed -->
@@ -197,7 +196,6 @@
     <a href="https://github.com/yourusername" class="text-green-400 hover:underline">See more on GitHub →</a>
   </p>
 </section>
-
 
 
   <section id="certs" class="certs">
