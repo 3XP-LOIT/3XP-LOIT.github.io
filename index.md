@@ -164,27 +164,41 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="p-8 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold text-green-400 mb-4">Skills</h2>
-    <ul class="list-disc ml-6 text-gray-300">
-      <li>Web Application Testing</li>
-      <li>Active Directory Exploitation</li>
-      <li>Linux & Windows Privilege Escalation</li>
-      <li>Networking & Protocol Analysis</li>
-      <li>Exploit Development Basics</li>
-    </ul>
-  </section>
+ <section id="skills" class="p-8 max-w-4xl mx-auto">
+   <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Skills</h2>
+   <div class="flex flex-wrap gap-3 justify-center">
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Web Application Testing</span>
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Active Directory Exploitation</span>
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Linux Privilege Escalation</span>
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Windows Privilege Escalation</span>
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Networking & Protocol Analysis</span>
+     <span class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full border border-gray-700">Exploit Development Basics</span>
+   </div>
+ </section>
+
 
   <!-- Tools Section -->
-  <section id="tools" class="p-8 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold text-green-400 mb-4">Tools</h2>
-    <p class="text-gray-300 mb-4">Here are some tools I’ve built or contributed to. You can find the full list on my GitHub.</p>
-    <ul class="list-disc ml-6 text-gray-300">
-      <li><a href="https://github.com/yourusername/tool1" class="text-green-400 hover:underline">Tool 1</a> – A custom scanner for XYZ</li>
-      <li><a href="https://github.com/yourusername/tool2" class="text-green-400 hover:underline">Tool 2</a> – Automates recon and enumeration</li>
-      <li><a href="https://github.com/yourusername" class="text-green-400 hover:underline">More on GitHub</a></li>
-    </ul>
-  </section>
+  <section id="tools" class="p-8 max-w-5xl mx-auto">
+  <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Tools</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-gray-800 p-5 rounded-lg shadow hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-gray-100">Tool 1</h3>
+      <p class="text-gray-400 mb-2">A custom scanner for XYZ.</p>
+      <a href="https://github.com/yourusername/tool1" class="text-green-400 hover:underline">View on GitHub</a>
+    </div>
+    <div class="bg-gray-800 p-5 rounded-lg shadow hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-gray-100">Tool 2</h3>
+      <p class="text-gray-400 mb-2">Automates recon and enumeration.</p>
+      <a href="https://github.com/yourusername/tool2" class="text-green-400 hover:underline">View on GitHub</a>
+    </div>
+    <!-- Add more tool cards as needed -->
+  </div>
+  <p class="text-center mt-6">
+    <a href="https://github.com/yourusername" class="text-green-400 hover:underline">See more on GitHub →</a>
+  </p>
+</section>
+
+
 
   <section id="certs" class="certs">
     <h2>Certifications</h2>
