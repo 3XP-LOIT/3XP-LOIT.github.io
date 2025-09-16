@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTB Machine 1 Writeup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Use the same styles from your main index.html to keep the look consistent */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #1a1a1a; color: #e0e0e0; line-height: 1.6; }
+    header { background: #0d0d0d; padding: 2rem 0; text-align: center; }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+    header p { color: #aaa; }
+    nav { background: #141414; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; }
+    nav a { color: #e0e0e0; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: #00adb5; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    /* Styling for the Markdown content */
+    #markdown-content { background: #262626; padding: 2rem; border-radius: 12px; }
+    #markdown-content h1, #markdown-content h2, #markdown-content h3 { color: #fff; margin-top: 2rem; margin-bottom: 1rem; }
+    #markdown-content p { margin-bottom: 1rem; }
+    #markdown-content pre { background: #1a1a1a; padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; }
+    #markdown-content code { background: #333; padding: 2px 4px; border-radius: 4px; }
+    #markdown-content a { color: #00adb5; text-decoration: none; }
+    #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1rem 0; border-radius: 8px; }
+    footer { background: #0d0d0d; color: #777; text-align: center; padding: 1.5rem; font-size: 0.9rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTB Machine 1 Writeup</h1>
+    <p>A detailed walkthrough</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/htb/">HackTheBox</a>
+    <a href="/thm/">TryHackMe</a>
+  </nav>
+
+  <div class="container">
+    <div id="markdown-content">
+      </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Fetch the Markdown file and render it
+    fetch('walkthrough.md') // Assuming your markdown file is named walkthrough.md in the same folder
+      .then(response => response.text())
+      .then(markdownText => {
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdownText);
+      });
+  </script>
+</body>
+</html>
