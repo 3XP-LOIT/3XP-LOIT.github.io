@@ -153,6 +153,10 @@
         <p>HackTheBox walkthroughs.<a href="/htb">Access Here</a></p>
       </div>
       <div class="project-card">
+        <h3>Hacksmarter</h3>
+        <p>Hacksmarter walkthroughs.<a href="/hsm">Access Here</a></p>
+      </div>
+      <div class="project-card">
         <h3>TryHackMe</h3>
         <p>TryHackMe Writeups<a href="/thm">Access Here</a></p>
       </div>
