@@ -1,3 +1,4 @@
+# Site Settings
 title: "3xp-loit | Security Research"
 description: "Pentester | Exploit Dev | CTF Writeups"
 author: "3xp-loit"
@@ -7,28 +8,41 @@ baseurl: ""
 # Theme Engine
 remote_theme: sighingnow/jekyll-gitbook
 
-# This organizes your sidebar into "Sections"
+# 1. ACTIVATE CUSTOM HACKER CSS
+# This links your /assets/style.css file automatically
+extra_css: ["/assets/style.css"]
+
+# 2. DEFINE YOUR WRITEUP SECTIONS (Sidebar)
+# Files must be in folders named _htb, _thm, etc.
 collections:
   htb:
     output: true
+    permalink: /htb/:path/
     title: "HackTheBox"
   thm:
     output: true
+    permalink: /thm/:path/
     title: "TryHackMe"
-  projects:
+  hsm:
     output: true
-    title: "My Tools"
+    permalink: /hsm/:path/
+    title: "Hacksmarter"
 
-# Plugins for SEO and feeds
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-remote-theme
-
-# Table of Contents settings (Like GitBook)
+# 3. ENABLE SEARCH & NAVIGATION (Like GitBook)
 toc:
   enabled: true
   h_min: 1
   h_max: 3
 
-extra_css: ["/assets/style.css"]
+# 4. PLUGINS
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-search
+
+# Exclude node_modules or vendor files if they exist
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
