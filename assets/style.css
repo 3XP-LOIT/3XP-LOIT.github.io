@@ -1,59 +1,52 @@
-/* --- GLOBAL DARK OVERRIDE --- */
-body, .book, .book-body, .page-inner, .section {
-    background-color: #0d1117 !important; /* GitHub Dark */
+/* --- KILL THE BLUE --- */
+
+/* Force all headings to Green */
+h1, h2, h3, h4, h5, h6, .book-header h1 a {
+    color: #00ff41 !important; 
+    border-bottom: 1px solid #30363d !important;
+    font-weight: 600 !important;
+}
+
+/* Force links to be Green or Light Gray, never Blue */
+a, .book-summary ul.summary li a {
+    color: #00ff41 !important;
+    text-decoration: none !important;
+}
+
+/* Sidebar Active Link (The one you are currently on) */
+.book-summary ul.summary li.active>a {
+    color: #00ff41 !important;
+    background: rgba(0, 255, 65, 0.1) !important;
+    border-left: 3px solid #00ff41 !important;
+}
+
+/* Backgrounds */
+body, .book, .book-body, .page-inner, .section, .book-header {
+    background-color: #0d1117 !important;
     color: #c9d1d9 !important;
 }
 
-/* --- THE TOP WHITE BAR --- */
-.book-header {
-    background: #161b22 !important;
-    color: #c9d1d9 !important;
-}
-
-.book-header h1 a, .book-header .btn {
-    color: #00ff41 !important; /* Green buttons/text */
-}
-
-/* --- SIDEBAR --- */
+/* Sidebar Background */
 .book-summary {
     background: #0d1117 !important;
     border-right: 1px solid #30363d !important;
 }
 
-.book-summary ul.summary li a {
-    color: #8b949e !important;
-}
-
-.book-summary ul.summary li.active>a {
+/* Search Bar Text */
+#book-search-input input {
+    background: #161b22 !important;
     color: #00ff41 !important;
-    background: rgba(0, 255, 65, 0.1) !important;
-}
-
-/* --- HEADERS (Fixing the Blue) --- */
-h1, h2, h3, h4, h5, h6 {
-    color: #58a6ff !important; /* Subtle blue like HackTricks */
-    border-bottom: 1px solid #30363d !important;
-}
-
-/* --- LINKS --- */
-a {
-    color: #58a6ff !important;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* --- CODE BLOCKS --- */
-code {
-    background-color: #161b22 !important;
-    color: #00ff41 !important;
-    padding: 2px 4px !important;
-    border-radius: 4px;
-}
-
-pre {
-    background: #010409 !important;
     border: 1px solid #30363d !important;
+}
+
+/* Scrollbar Hacker Style */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 10px;
 }
