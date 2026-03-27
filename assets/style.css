@@ -1,27 +1,59 @@
-/* FORCE DARK MODE */
+/* --- GLOBAL DARK OVERRIDE --- */
 body, .book, .book-body, .page-inner, .section {
-    background-color: #0d1117 !important;
+    background-color: #0d1117 !important; /* GitHub Dark */
     color: #c9d1d9 !important;
 }
 
-.book-summary {
+/* --- THE TOP WHITE BAR --- */
+.book-header {
     background: #161b22 !important;
+    color: #c9d1d9 !important;
+}
+
+.book-header h1 a, .book-header .btn {
+    color: #00ff41 !important; /* Green buttons/text */
+}
+
+/* --- SIDEBAR --- */
+.book-summary {
+    background: #0d1117 !important;
     border-right: 1px solid #30363d !important;
 }
 
-.book-summary ul.summary li a, .book-summary ul.summary li span {
+.book-summary ul.summary li a {
     color: #8b949e !important;
 }
 
 .book-summary ul.summary li.active>a {
     color: #00ff41 !important;
+    background: rgba(0, 255, 65, 0.1) !important;
 }
 
-h1, h2, h3, h4 {
+/* --- HEADERS (Fixing the Blue) --- */
+h1, h2, h3, h4, h5, h6 {
+    color: #58a6ff !important; /* Subtle blue like HackTricks */
+    border-bottom: 1px solid #30363d !important;
+}
+
+/* --- LINKS --- */
+a {
     color: #58a6ff !important;
+    text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- CODE BLOCKS --- */
 code {
-    background-color: #000 !important;
+    background-color: #161b22 !important;
     color: #00ff41 !important;
+    padding: 2px 4px !important;
+    border-radius: 4px;
+}
+
+pre {
+    background: #010409 !important;
+    border: 1px solid #30363d !important;
 }
