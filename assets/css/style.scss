@@ -1,0 +1,15 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Custom Green Glow for links */
+a {
+  color: #00ff41;
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+/* Make headings look like terminal prompts */
+h3 {
+  color: #00ff41 !important;
+  font-family: 'Courier New', Courier, monospace;
+}
