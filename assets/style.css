@@ -1,0 +1,29 @@
+/* Dark Theme Overrides */
+:root {
+    --primary-color: #00ff41; /* Matrix Green */
+}
+
+body, .book {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+.book .book-summary {
+    background: #161b22 !important;
+    border-right: 1px solid #30363d !important;
+}
+
+.book .book-summary ul.summary li a {
+    color: #8b949e !important;
+}
+
+.book .book-summary ul.summary li.active>a {
+    color: #00ff41 !important;
+    background: rgba(0, 255, 65, 0.1) !important;
+}
+
+code {
+    background-color: #000 !important;
+    color: #00ff41 !important;
+    border: 1px solid #333;
+}
