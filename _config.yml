@@ -30,3 +30,5 @@ toc:
   enabled: true
   h_min: 1
   h_max: 3
+
+extra_css: ["/assets/style.css"]
