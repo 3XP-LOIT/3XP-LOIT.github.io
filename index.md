@@ -19,3 +19,4 @@ Oi 👋, I'm **Abiodun Victor Taiwo**. I'm a Cybersecurity professional speciali
 ### Latest Writeups:~#
 
 >> [[MAR 27 2024]] [Jerry](/htb/jerry) `Tomcat`, `Weak Credentials`, `WAR Upload`
+>> [[MAR 27 2026]] [Cap](/htb/cap) `FTP PCAP`, `Insecure Direct Object Reference`, `Python Capabilities`
