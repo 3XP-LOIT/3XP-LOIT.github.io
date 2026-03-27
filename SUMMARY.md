@@ -4,9 +4,9 @@
 
 ### HackTheBox
 * Windows
-  * [Jerry](/htb/windows/jerry)
+  * [Jerry](/_htb/windows/jerry)
 * Linux
-  * [Lame](/htb/linux/lame)
+  * [Lame](/_htb/linux/lame)
 
 ### TryHackMe
 {% for post in site.thm %}
