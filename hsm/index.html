@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Secrets — AWS Pentest Walkthrough</title>
+  <title>HackSmarter Writeups</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -14,45 +13,49 @@
     nav { background: #141414; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; }
     nav a { color: #e0e0e0; text-decoration: none; font-weight: 500; transition: color 0.3s; }
     nav a:hover { color: #00adb5; }
-    .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-    #markdown-content { background: #262626; padding: 2rem; border-radius: 12px; }
-    #markdown-content h1, #markdown-content h2, #markdown-content h3 { color: #fff; margin-top: 2rem; margin-bottom: 1rem; }
-    #markdown-content p { margin-bottom: 1rem; }
-    #markdown-content pre { background: #1a1a1a; padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; }
-    #markdown-content code { background: #333; padding: 2px 4px; border-radius: 4px; }
-    #markdown-content a { color: #00adb5; text-decoration: none; }
-    #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1rem 0; border-radius: 8px; }
-    #markdown-content table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
-    #markdown-content th { background: #1a1a1a; color: #00adb5; padding: 0.6rem 1rem; text-align: left; }
-    #markdown-content td { padding: 0.6rem 1rem; border-bottom: 1px solid #333; }
-    #markdown-content tr:hover { background: #2e2e2e; }
-    #markdown-content blockquote { border-left: 3px solid #00adb5; padding-left: 1rem; color: #aaa; margin-bottom: 1rem; }
-    footer { background: #0d0d0d; color: #777; text-align: center; padding: 1.5rem; font-size: 0.9rem; margin-top: 2rem; }
+    section { padding: 3rem 10%; }
+    h2 { text-align: center; margin-bottom: 2rem; color: #fff; }
+    .writeups { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .card { background: #262626; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { color: #fff; margin-bottom: 0.5rem; }
+    .card a { color: #00adb5; text-decoration: none; font-weight: 500; }
+    .card a:hover { color: #007780; }
+    footer { background: #0d0d0d; color: #777; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Data Secrets</h1>
-    <p>AWS Pentest — Lateral Movement & Secrets Manager</p>
+    <h1>Hacksmarter Writeups</h1>
+    <p>Walkthroughs of boxes & challenges</p>
   </header>
+
   <nav>
     <a href="/">Home</a>
     <a href="/htb/">HackTheBox</a>
     <a href="/thm/">TryHackMe</a>
+    <a href=/hsm/">HackSmarter</a>
   </nav>
-  <div class="container">
-    <div id="markdown-content"></div>
-  </div>
+
+  <section>
+    <h2>My Hacksmarter Writeups</h2>
+    <div class="writeups">
+      <div class="card">
+        <h3>Data Secrets</h3>
+        <p>A beginner-friendly walkthrough of Hacksmarter Machine</p>
+        <a href="data_secrets/index.html">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Hacksmarter Machine 2</h3>
+        <p>Exploiting misconfigurations and privilege escalation.</p>
+        <a href="#">Read More</a>
+      </div>
+      <!-- Add more writeups as needed -->
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Your Name. All rights reserved.</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    fetch('index.md')
-      .then(response => response.text())
-      .then(markdownText => {
-        document.getElementById('markdown-content').innerHTML = marked.parse(markdownText);
-      });
-  </script>
 </body>
 </html>
