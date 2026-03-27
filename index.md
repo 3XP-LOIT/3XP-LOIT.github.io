@@ -1,35 +1,21 @@
 ---
-layout: post
-title: 0x01 // Abiodun Victor Taiwo
+layout: default
 ---
 
-# 3xp-loit
-### Pentester | Security Researcher | Cybersecurity Enthusiast
-
-Hello! I'm a cybersecurity professional specializing in penetration testing and ethical hacking. I enjoy exploring attack surfaces, exploiting vulnerabilities, and giving back to the community.
+[Main](index.html) &nbsp;&nbsp; [TryHackMe](/thm) &nbsp;&nbsp; [HackTheBox](/htb) &nbsp;&nbsp; [Hacksmarter](/hsm)
 
 ---
 
-### [!] Research & Writeups
-Detailed walkthroughs of labs, exploits, and security concepts.
-* **[Main Blog (Medium)](https://medium.com/@3xploit)** - Deep dives and research papers.
-* **Lab Writeups** - Navigate the **sidebar** on the left for HTB, THM, and Hacksmarter machines.
+### Whoami:~#
+
+Oi 👋, I'm **Abiodun Victor Taiwo**. I'm a Cybersecurity professional specializing in penetration testing. This is a collection of my writeups, tools, and research.
+
+**GitHub:** [github.com/3XP-LOIT](https://github.com/3XP-LOIT)
+**Medium:** [@3xploit](https://medium.com/@3xploit)
+**Certs:** `CRTA` | `CAP` | `CNSP`
 
 ---
 
-### [~] Technical Skills
-* **Web App Pentesting:** Burp Suite, OWASP Top 10, SSRF/SQLi.
-* **Infrastructure:** Active Directory Exploitation, Privilege Escalation.
-* **Scripting:** Python, Bash, Exploit Development.
-* **Networking:** Packet Analysis, Tunneling, Pivoting.
+### Latest Writeups:~#
 
-### [@] Certifications
-`CRTA` | `CCEP` | `CAP` | `CNSP` 
-
----
-
-### [?] Connectivity & Socials
-* **Email:** [victorolatunde656@gmail.com](mailto:victorolatunde656@gmail.com)
-* **LinkedIn:** [Victor Abiodun](https://www.linkedin.com/in/victor-abiodun-a970712a5/?)
-* **GitHub:** [3XP-LOIT](https://github.com/3XP-LOIT)
-* **Medium:** [@3xploit](https://medium.com/@3xploit)
+>> [[MAR 27 2024]] [Jerry](/htb/jerry) `Tomcat`, `Weak Credentials`, `WAR Upload`
