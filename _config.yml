@@ -1,13 +1,32 @@
-title: "My Cybersecurity Portfolio"
-description: "Pentester | Security Researcher | Cybersecurity Enthusiast"
-author: "Your Name"
-email: youremail@example.com
-baseurl: "" # leave empty for user.github.io
-url: "https://yourusername.github.io"
+title: "3xp-loit | Security Research"
+description: "Pentester | Exploit Dev | CTF Writeups"
+author: "3xp-loit"
+url: "https://3xp-loit.github.io"
+baseurl: ""
 
-# Prevent GitHub Pages from trying to apply a theme
-theme: null
+# Theme Engine
+remote_theme: sighingnow/jekyll-gitbook
 
+# This organizes your sidebar into "Sections"
+collections:
+  htb:
+    output: true
+    title: "HackTheBox"
+  thm:
+    output: true
+    title: "TryHackMe"
+  projects:
+    output: true
+    title: "My Tools"
+
+# Plugins for SEO and feeds
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
+
+# Table of Contents settings (Like GitBook)
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3
