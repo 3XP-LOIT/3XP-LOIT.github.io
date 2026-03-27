@@ -10,7 +10,7 @@ remote_theme: sighingnow/jekyll-gitbook
 
 # 1. ACTIVATE CUSTOM HACKER CSS
 # This links your /assets/style.css file automatically
-extra_css: ["/assets/style.css"]
+extra_css: ["assets/style.css"]
 
 # 2. DEFINE YOUR WRITEUP SECTIONS (Sidebar)
 # Files must be in folders named _htb, _thm, etc.
