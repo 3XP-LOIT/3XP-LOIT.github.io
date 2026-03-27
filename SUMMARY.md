@@ -3,9 +3,10 @@
 * [0x01 // About Me](index.md)
 
 ### HackTheBox
-{% for post in site.htb %}
-* [{{ post.title }}]({{ post.url }})
-{% endfor %}
+* Windows
+  * [Jerry](/htb/windows/jerry)
+* Linux
+  * [Lame](/htb/linux/lame)
 
 ### TryHackMe
 {% for post in site.thm %}
