@@ -23,6 +23,7 @@ Also known as: **3xploit**
 ---
 ### Hackthebox Writeups:~#
 \>>  [Cap](/htb/cap) `FTP PCAP, IDOR, Python Capabilities`
+
 \>> [Conversor](/htb/conversor) `XSLT Injection, CVE-2024-48990`
 
 XSLT Injection, SQLite Database Analysis, CVE-2024-48990 (Needrestart)
