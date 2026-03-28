@@ -20,4 +20,4 @@ Also known as: **3xploit**
 
 ### Hackthebox Writeups:~#
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
->> [[MAR 27 2026]] [Cap](/htb/cap) `FTP PCAP`, `Insecure Direct Object Reference`, `Python Capabilities`
+\>> [[MAR 27 2026]] [Cap](/htb/cap) `FTP PCAP`, `Insecure Direct Object Reference`, `Python Capabilities`
