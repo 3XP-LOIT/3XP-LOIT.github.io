@@ -12,9 +12,12 @@ Hey 👋, I'm **Abiodun Victor Taiwo**. I'm a Cybersecurity professional special
 
 
 Also known as: **3xploit**
+
 **GitHub:** [github.com/3XP-LOIT](https://github.com/3XP-LOIT)
+
 **Medium:** [@3xploit](https://medium.com/@3xploit)
-**Certs:** `CRTA` | `CAP` | `CNSP`
+
+**Certs:** `CRTA` | `CCEP` | `CAP` | `CNSP`
 
 
 
