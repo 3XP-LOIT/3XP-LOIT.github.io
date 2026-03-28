@@ -78,6 +78,7 @@ I proceeded to get a reverse shell back to my machine
 I found a .helpline.sh script in the home directory of apaar
 Running sudo -l shows we can run the script as apaar
 When I ran the script, we are asked for some input. I first thought of editing the script to put my shell but no luck then I checked the script and how it processes user input. Then I decided to put /bin/bash as input for the $person and $msg. We got a shell as apaar
+
 <img width="720" height="286" alt="image" src="https://github.com/user-attachments/assets/5ece38a4-640e-4ea3-a87a-86829781397a" />
 
 As apaar, I can read the user flag
@@ -97,12 +98,15 @@ ls
 files  html
 ```
 The `files` directory contains 4 files, including index.php, interesting.
+
 <img width="476" height="163" alt="image" src="https://github.com/user-attachments/assets/8a0e395a-99ea-485c-8fbf-eb0962874a52" />
 
 The index.php file contains database creds
+
 <img width="720" height="337" alt="image" src="https://github.com/user-attachments/assets/2f701f68-38bf-41ab-8f2c-1095f4d894f2" />
 
 I proceeded to login to the database with these creds and found two users and their password hashes
+
 <img width="720" height="114" alt="image" src="https://github.com/user-attachments/assets/362f2607-50ad-4014-9cc7-87dff0d6f5d5" />
 The hashes were crackable but I tried loggin in with them, no luck
 
@@ -112,6 +116,7 @@ I ran stegseek on the jpeg image and a file was extracted, it was a zipped file.
 <img width="577" height="151" alt="image" src="https://github.com/user-attachments/assets/d0f3a233-488c-47fa-a11c-e797d12c101b" />
 
 The zipped file had a password so I used zip2john to get the hash and try to crack the resulting hash
+
 <img width="720" height="175" alt="image" src="https://github.com/user-attachments/assets/378c358f-c595-4f10-8720-40f82f6e5f53" />
 
 I was able to unlock the zipped file and got a source_code.php file which contained the creds for the `anurodh` user
@@ -121,6 +126,7 @@ I was able to unlock the zipped file and got a source_code.php file which contai
 ### Privilege_Escalation:~#
 The `anurodh` user was in a docker group telling us that we're in a docker group
 I used gtfobins to get the command for escaping a docker environment
+
 <img width="720" height="173" alt="image" src="https://github.com/user-attachments/assets/2833ded1-251b-400f-8fa2-00b233e66e52" />
 
 ```
