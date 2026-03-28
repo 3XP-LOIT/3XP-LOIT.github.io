@@ -12,6 +12,10 @@ date: 2026-03-29
 
 ---
 
+<img width="283" height="254" alt="image" src="https://github.com/user-attachments/assets/a7c07f4f-2b4b-43f9-ab7b-654b23f4b4c8" />
+
+
+
 ### [~] Enumeration:~#
 
 Standard Nmap scan to identify the attack surface:
