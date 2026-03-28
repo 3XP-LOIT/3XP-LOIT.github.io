@@ -33,7 +33,7 @@ ogtj5df20x"
 }
 ```
 
-[!] EC2_Enumeration:~#
+### [!] EC2_Enumeration:~#
 Scanning for active compute resources. We find two instances tagged as cg-sensitive-ec2.
 
 ```bash
@@ -73,7 +73,7 @@ Decodeding from base64 gives us user creds for ssh:
 echo "ec2-user:CloudGoatInstancePassword!" | chpasswd
 ```
 
-[#] Lateral_Movement:~#
+### [#] Lateral_Movement:~#
 Using the leaked password, I SSH'd into the public instance.
 Once inside, I queried the Instance Metadata Service (IMDS) to steal the IAM role credentials attached to the VM:
 
@@ -124,7 +124,7 @@ e-cgid42ghgr66ot/i-0499bcfeb96d4af40"
 }
 ```
 
-[!] Lambda_Credential_Harvesting:~#
+### [!] Lambda_Credential_Harvesting:~#
 With the EC2 role permissions, I enumerated the Lambda functions in the account:
 
 ```bash
@@ -141,7 +141,7 @@ The function is configured with plaintext AWS credentials in its Environment Var
 }
 ```
 
-[#] Secrets_Manager:~#
+### [#] Secrets_Manager:~#
 Using the new user credentials I got, I configured another user's aws profile:
 
 ```bash
