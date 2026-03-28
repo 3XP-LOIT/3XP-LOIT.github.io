@@ -4,11 +4,9 @@ title: "TryHackMe: Chill Hack"
 date: 2026-03-29
 ---
 
-# ./ TryHackMe/Chill_Hack:~# 
-
 > **Machine:** Chill Hack
+
 > **Difficulty:** Easy
-> **Techniques:** Command Injection, Steganography, Misconfigured Sudo, Credential Harvesting
 
 ---
 
