@@ -45,3 +45,37 @@ header {
   border-bottom: 1px solid #00ff41 !important;
   margin-bottom: 20px;
 }
+
+
+/* --- BACK BUTTON TERMINAL STYLE --- */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  color: #00ff41 !important; 
+  text-decoration: none !important;
+  border: 1px solid #00ff41;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  
+  &:hover {
+    background: #00ff41;
+    color: #000 !important;
+  }
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+/* Ensure title doesn't hit the button on desktop */
+header .container {
+  padding-top: 20px;
+}
