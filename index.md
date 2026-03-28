@@ -17,7 +17,7 @@ Also known as: **3xploit**
 
 **Medium:** [@3xploit](https://medium.com/@3xploit)
 
-**Certs:** `CRTA` | `CCEP` | `CAP` | `CNSP`
+**Certs:** `CRTA | CCEP | CAP | CNSP`
 
 
 ---
