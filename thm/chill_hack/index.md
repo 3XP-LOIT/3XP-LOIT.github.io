@@ -115,6 +115,7 @@ The zipped file had a password so I used zip2john to get the hash and try to cra
 <img width="720" height="175" alt="image" src="https://github.com/user-attachments/assets/378c358f-c595-4f10-8720-40f82f6e5f53" />
 
 I was able to unlock the zipped file and got a source_code.php file which contained the creds for the `anurodh` user
+
 <img width="720" height="433" alt="image" src="https://github.com/user-attachments/assets/bb81fd2b-d709-45e1-af9c-f0fcbd246a4f" />
 
 ### Privilege_Escalation:~#
