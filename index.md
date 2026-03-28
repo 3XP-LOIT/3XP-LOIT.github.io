@@ -16,8 +16,9 @@ Also known as: **3xploit**
 **Medium:** [@3xploit](https://medium.com/@3xploit)
 **Certs:** `CRTA` | `CAP` | `CNSP`
 
----
 
+
+---
 ### Hackthebox Writeups:~#
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 \>> [[MAR 27 2026]] [Cap](/htb/cap) `FTP PCAP`, `Insecure Direct Object Reference`, `Python Capabilities`
