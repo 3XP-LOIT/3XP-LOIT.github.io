@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Data Secrets"
-date: 2026-03-28
 ---
 
 # ./ Hacksmarter/Data_Secrets:~# 
