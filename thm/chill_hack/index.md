@@ -64,6 +64,7 @@ I proceeded to the webpage on port 80 to check the content.
 <img width="720" height="449" alt="image" src="https://github.com/user-attachments/assets/0ebeafb7-8f43-4b4d-a337-e60a827c4217" />
 
 Using ffuf, I found a directory /secret
+
 <img width="720" height="456" alt="image" src="https://github.com/user-attachments/assets/c57b74b8-4cbc-4b81-a16f-91891ea0c08e" />
 
 The web server hosts a "Command Panel." It attempts to filter common shell commands just like we read from the note on the ftp server, but I found I could bypass the filter using backslashes (\) or by chaining commands.
