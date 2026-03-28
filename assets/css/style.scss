@@ -1,15 +1,35 @@
----
----
-@import "{{ site.theme }}";
-
-/* Custom Green Glow for links */
-a {
-  color: #00ff41;
-  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+/* --- CATEGORY HEADERS (The Green Part) --- */
+h3, h2 {
+    color: #00ff41 !important; /* Hacker Green */
+    font-family: 'Courier New', Courier, monospace !important;
+    border-bottom: 1px dashed #30363d !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    text-transform: none !important;
 }
 
-/* Make headings look like terminal prompts */
-h3 {
-  color: #00ff41 !important;
-  font-family: 'Courier New', Courier, monospace;
+/* --- MACHINE LINKS (The Blue Part) --- */
+/* This targets links that follow the >> pattern */
+a {
+    color: #58a6ff !important; /* Hacker Blue */
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #00ff41 !important; /* Turns green when you hover */
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+/* --- THE DATE & SYMBOLS (Gray/White) --- */
+body {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important; /* Light gray for general text */
+}
+
+/* Style for the [[]] and date area */
+code {
+    background: #161b22 !important;
+    color: #8b949e !important;
+    border: 1px solid #30363d !important;
 }
