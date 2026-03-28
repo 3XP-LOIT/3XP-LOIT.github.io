@@ -3,7 +3,6 @@ layout: default
 title: "Data Secrets"
 ---
 
-# ./ Hacksmarter/Data_Secrets:~# 
 
 \>> **Machine:** Data Secrets
 
