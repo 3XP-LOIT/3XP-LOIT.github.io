@@ -6,7 +6,9 @@ title: "Data Secrets"
 # ./ Hacksmarter/Data_Secrets:~# 
 
 \>> **Machine:** Data Secrets
+
 \>> **Platform:** AWS
+
 \>> **Difficulty:** Medium
 
 ---
@@ -112,7 +114,7 @@ k5N7DtEe/ZZYKCELUqKCq7ViaDhJ0xNQfc30KzS/9dEYOSQEjgVaCflGvQ
 Ngh5uFQE4AmJESlTwxH0wYpRVjvvsuW3es3xbKPduYrP6jDVOD",
  "Expiration" : "2026-03-21T07:13:56Z"
 ```
-I exported these temporary tokens (AccessKey, SecretKey, SessionToken) to my local machine as a new profile named role.
+I exported these creds to my local machine as a new profile named role.
 ```bash
 > aws sts get-caller-identity --profile role
 
@@ -128,7 +130,7 @@ e-cgid42ghgr66ot/i-0499bcfeb96d4af40"
 With the EC2 role permissions, I enumerated the Lambda functions in the account:
 
 ```bash
-aws lambda list-functions --profile role --region us-east-1
+> aws lambda list-functions --profile role --region us-east-1
 ```
 The function is configured with plaintext AWS credentials in its Environment Variables.
 
@@ -217,4 +219,4 @@ ret:cg-final-flag-cgid1cu9rl0f6y-Qe2Tlq",
 
 Final_Flag: d4t4_s3cr3ts_4r3_fun
 
-Thank you 
+Thank you .
