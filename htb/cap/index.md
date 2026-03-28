@@ -3,11 +3,10 @@ layout: default
 title: "HackTheBox — Cap Walkthrough (10.10.10.245)"
 ---
 
-# ./ HackTheBox/Cap:~# 
 
 > **Machine:** Cap (10.10.10.245)
+
 > **Difficulty:** Easy
-> **Techniques:** PCAP Analysis, IDOR, Linux Capabilities
 
 ---
 
@@ -37,7 +36,7 @@ The web service claims to be a **Security Dashboard**. Suspicious and interestin
 
 ---
 
-[!] Web_Analysis:~#
+### [!] Web_Analysis:~#
 
 Browsing to `http://10.10.10.245/` shows a **Security Dashboard**. By manipulating the URL, I found an IDOR vulnerability in the /data/ directory. Changing the index allowed me to download a sensitive .pcap file.
 
@@ -61,7 +60,7 @@ PASS Buck3tH4TF0RM3!
  
 ---
 
-[#] Gaining_Access:~#
+### [#] Gaining_Access:~#
 
 The credentials worked for both FTP and SSH so I opted for SSH to get a stable TTY shell and got the user flag
 
@@ -112,18 +111,5 @@ cat /root/root.txt
 ```
 
 ---
-
-## 📝 Lessons Learned
-
-- `.pcap` files can leak **sensitive credentials** (FTP cleartext login in this case).  
-- **Linux capabilities** can be as dangerous as `SUID` binaries if misconfigured.  
-- Always check binaries with `getcap -r / 2>/dev/null`.
-
----
-
-It’s a perfect beginner-friendly machine that teaches:
-- Traffic capture analysis
-- Credential harvesting
-- Misconfigured binary exploitation
 
 Happy hacking! 
