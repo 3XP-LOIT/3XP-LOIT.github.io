@@ -19,17 +19,17 @@ Also known as: **3xploit**
 
 
 ---
-### Hackthebox Writeups:~#
+### **Hackthebox Writeups:~#**
 ---
 \>>  [Cap](/htb/cap) `FTP PCAP`, `Insecure Direct Object Reference`, `Python Capabilities`
 
 
 ---
-### Tryhackme Writeups:~#
+**### Tryhackme Writeups:~#**
 ---
 
 
 ---
-### Hacksmarter Writeups:~#
+**### Hacksmarter Writeups:~#**
 ---
 \>>  [Data Secrets](/hsm/data_secrets) `EC2 UserData Analysis`, `IMDSv1 Abuse`, `Lambda Env Var Exfiltration`
