@@ -25,6 +25,12 @@
             <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
           </section>
         {% endif %}
+        {% unless page.url == "/" %}
+         <a href="{{ '/' | relative_url }}" class="back-btn">
+         [ <span class="blink">_</span> BACK_TO_HOME ]
+        </a>
+        {% endunless %}
+
       </div>
     </header>
 
