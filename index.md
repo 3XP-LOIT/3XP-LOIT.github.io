@@ -25,7 +25,10 @@ Also known as: **3xploit**
 \>>  [Cap](/htb/cap) `FTP PCAP, IDOR, Python Capabilities`
 
 
-\>> [Conversor](/htb/conversor) `XSLT Injection, CVE-2024-48990`
+\>> [Conversor](/htb/conversor) `XSLT Injection, CVE-2024-48990o`
+
+
+\>> [Expressway](/htb/expressway) `IKE, PSK Cracking, CVE-2025-32463 (Sudo-Chwoot)`
 
 
 
