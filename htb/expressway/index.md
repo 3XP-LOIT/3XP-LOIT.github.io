@@ -53,10 +53,13 @@ Ending ike-scan 1.9.6: 1 hosts scanned in 0.202 seconds (4.94 hosts/sec).  1 ret
 ```
 
 After getting the hash, I cracked the hash with hashcat
+
+
 Cracked hash: `freakingrockstarontheroad`
 
 ### Gaining_Access:~#
 The cracked VPN password works for SSH access as the user `ike` and i'm able to get the user.txt file.
+
 `user.txt: dbdddb61fcd122a10f4f31c4c31122b4`
 
 ### Privilege_Escalation:~#
