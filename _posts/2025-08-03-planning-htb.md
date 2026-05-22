@@ -1,5 +1,5 @@
 ---
-title: "Planning @ HackTheBox"
+title: "Planning @ HTB"
 date: 2025-08-03
 categories: [HackTheBox, Medium]
 tags: [grafana, cve-2024-9264, vhost, ssh-tunneling, crontab]
@@ -50,6 +50,7 @@ Nothing particularly interesting comes back
 
 ### Vhost Scanning:~#
 Since the site redirects to a hostname, there might be other virtual hosts (subdomains) running on the same server. We use ffuf to fuzz for them:
+
 ```bash
 ~> ffuf -u http://10.10.11.68 -H "Host: FUZZ.planning.htb" -w ~/subs -fw 6
 
@@ -103,10 +104,11 @@ It works, we can read system files. Now let's dump the environment variables to 
 ![image description](/assets/image%20(14).png)
 
 In the output we spot these two interesting lines:
+
 **GF_SECURITY_ADMIN_USER=enzo**
 **GF_SECURITY_ADMIN_PASSWORD=RioTecRANDEntANT!**
 
-Grafana was storing admin credentials as environment variables. We now have valid system credentials: `enzo:RioTecRANDEntANT!`
+Grafana was storing user credentials as environment variables. We now have valid system credentials: `enzo:RioTecRANDEntANT!`
 
 We try the credentials over SSH and we are able to successfully login
 
