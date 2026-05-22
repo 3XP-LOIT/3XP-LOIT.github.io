@@ -6,7 +6,8 @@ tags: [xslt-injection, cve]
 ---
 
 
-<img width="600" height="486" alt="image" src="https://github.com/user-attachments/assets/f8a6025e-a1ce-4c2e-b8ae-5545e03b6bf0" />
+<img width="700" height="568" alt="image" src="https://github.com/user-attachments/assets/6f54a8ca-2244-4ef6-bf41-ef350d4d6681" />
+
 
 
 ---
