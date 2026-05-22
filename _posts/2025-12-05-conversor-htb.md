@@ -4,7 +4,7 @@ date: 2025-12-05
 categories: [HackTheBox, Easy]
 tags: [xslt-injection, cve]
 image:
-  path: <img width="700" height="568" alt="image" src="https://github.com/user-attachments/assets/6f54a8ca-2244-4ef6-bf41-ef350d4d6681" />
+  path: https://github.com/user-attachments/assets/6f54a8ca-2244-4ef6-bf41-ef350d4d6681
 ---
 
 
