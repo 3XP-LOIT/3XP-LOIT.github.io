@@ -93,6 +93,7 @@ cat local.txt
 ```
 
 While enumerating further, I see a directory `files` in `/var/www` alongside the html directory
+
 ```
 apaar@ubuntu:/var/www$ ls
 ls
