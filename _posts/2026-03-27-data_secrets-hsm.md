@@ -7,8 +7,6 @@ image:
   path: https://github.com/user-attachments/assets/708c8f8c-3a34-49b6-be04-9c27d9a8c818
 ---
 
-<img width="1600" height="896" alt="image" src="https://github.com/user-attachments/assets/708c8f8c-3a34-49b6-be04-9c27d9a8c818" />
-
 
 ### Initial_Access:~#
 
