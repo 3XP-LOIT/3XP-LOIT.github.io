@@ -7,11 +7,6 @@ image:
   path: https://github.com/user-attachments/assets/6f54a8ca-2244-4ef6-bf41-ef350d4d6681
 ---
 
-
-<img width="700" height="568" alt="image" src="https://github.com/user-attachments/assets/6f54a8ca-2244-4ef6-bf41-ef350d4d6681" />
-
-
-
 ---
 
 ### Enumeration:~#
