@@ -2,7 +2,7 @@
 title: "ChillHack @ Tryhackme"
 date: 2025-04-19
 categories: [Tryhackme, Easy]
-tags: [Command Injection, Docker escape]
+tags: ["Command Injection, Docker escape"]
 image:
   path: /assets/1.webp
 ---
