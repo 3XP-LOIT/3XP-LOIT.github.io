@@ -16,17 +16,17 @@ timezone:
 
 title: Chirpy # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Hack Enumerate Harder!. Eat. Sleep. Repeat.
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: "https://3xp-loit.github.io"
 
 github:
-  username: github_username # change to your GitHub username
+  username: 3XP-LOIT # change to your GitHub username
 
 twitter:
   username: twitter_username # change to your Twitter username
@@ -34,8 +34,8 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Abiodun Victor Taiwo
+  email: victorolatunde656@gmail.com # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
