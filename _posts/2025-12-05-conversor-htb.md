@@ -37,7 +37,7 @@ Service Info: Host: conversor.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### [!] Web_Exploitation:~#
 The application allows users to upload XML and XSLT files for conversion.
-<img width="1501" height="761" alt="image" src="https://github.com/user-attachments/assets/aa2d5af6-7ccd-4eeb-9625-1facd8c38cf8" />
+
 
 I exploited this by creating a malicious .xslt file that uses the EXSLT extension to write a Python reverse shell directly onto the server's script directory.
 
