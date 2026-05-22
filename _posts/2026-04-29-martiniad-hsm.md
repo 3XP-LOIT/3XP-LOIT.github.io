@@ -7,8 +7,6 @@ image:
   path: https://github.com/user-attachments/assets/e9ffe1fd-d8a2-4d2f-8add-b48846b06da2 
 ---
 
-<img width="1600" height="912" alt="image" src="https://github.com/user-attachments/assets/e9ffe1fd-d8a2-4d2f-8add-b48846b06da2" />
-
 
 # **Objective**
 
