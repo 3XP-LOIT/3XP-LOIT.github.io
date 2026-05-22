@@ -7,7 +7,6 @@ image:
   path: /assets/sam.png
 ---
 
-![image description](/assets/sam.png)
 
 
 ### Objective 
