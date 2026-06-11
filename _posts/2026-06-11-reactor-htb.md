@@ -85,8 +85,8 @@ Confirmed vulnerable.
 ### RCE via CVE-2025-55182
 
 The vulnerability abuses Next.js Server Actions through a prototype pollution 
-chain in the React Flight protocol. I crafted the payload in Burp's Repeater — 
-the key is the `_prefix` field, which gets evaluated as JavaScript on the 
+chain in the React Flight protocol. I crafted the payload in Burp's Repeater.
+The key is the `_prefix` field, which gets evaluated as JavaScript on the 
 server side.
 ```
 POST / HTTP/1.1
