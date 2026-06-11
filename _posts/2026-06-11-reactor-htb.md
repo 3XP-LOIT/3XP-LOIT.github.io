@@ -1,5 +1,5 @@
 ---
-title: "Reactor - HackTheBox Writeup"
+title: "Reactor @ HackTheBox"
 date: 2026-06-11
 categories: [HackTheBox, Easy]
 tags: [nextjs, cve-2025-55182, node-inspector]
