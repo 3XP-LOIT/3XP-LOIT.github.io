@@ -1,11 +1,14 @@
 ---
 title: "BombThreat @ Webverse"
 date: 2026-06-24
-categories: [Webverse, Web]
+categories: [Webverse, Medium]
 tags: [sqli, mfa-bypass, jwt]
 image:
   path: /assets/bomb.png
 ---
+
+**Platform:** https://dashboard.webverselabs-pro.com/labs/bombthreat
+
 
 BombThreat is a medium-difficulty lab running a Node.js + Express application backed by an in-memory SQLite database, fronted by an nginx gateway. The storyline drops you into a fictional "NEXUS Control" detonation portal. Your mission is to defuse a device before the countdown hits zero.
 
@@ -70,7 +73,7 @@ production.
 <img width="1419" height="633" alt="image" src="https://github.com/user-attachments/assets/6944a217-ce74-4915-8cfd-41c1dfc00018" />
 
 
-I entered `573627` into the verification form and the server issued a JWT
+I entered the OTP into the verification form and the server issued a JWT
 access token, dropping me into the debug dashboard.
 
 <img width="1599" height="822" alt="image" src="https://github.com/user-attachments/assets/c2bfadca-1365-457b-93c9-8dc3605cddb0" />
@@ -105,15 +108,13 @@ The signing algorithm is specified in the JWT header, and if the server's parser
 
 Replaying the deactivation request with the forged token:
 
-<img width="1257" height="392" alt="image" src="https://github.com/user-attachments/assets/384ddd89-bdba-47cb-a297-16180f20539e" />
+<img width="1252" height="399" alt="image" src="https://github.com/user-attachments/assets/9a05402b-ebb6-4059-9297-30f26ee06539" />
 
 
 ```json
 {
   "success": true,
   "message": "LEVEL 5 clearance accepted. Device deactivated.",
-  "flag": "WEBVERSE{10M_DOLLHAIRS}"
+  "flag": "WEBVERSE{10M_xxxxxxxxx}"
 }
 ```
-
-Flag: `WEBVERSE{10M_DOLLHAIRS}`
