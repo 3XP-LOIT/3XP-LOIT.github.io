@@ -1,7 +1,7 @@
 ---
-title: "Abducted - HackTheBox Writeup"
+title: "Abducted @ HackTheBox"
 date: 2026-06-25
-categories: [HackTheBox, Linux]
+categories: [HackTheBox, Medium]
 tags: [samba, cve-2026-4480, password-reuse, symlink]
 image:
   path: /assets/abducted.png
