@@ -126,7 +126,7 @@ I took the session cookie from the login response and navigated straight to `/da
 <img width="971" height="711" alt="image" src="https://github.com/user-attachments/assets/ff6ca01c-47e7-4a67-a8fb-689f655f5023" />
 
 
-MFA bypassed. The first flag was sitting right on the dashboard.
+MFA bypassed. The first flag was on the dashboard.
 
 ---
 
