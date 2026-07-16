@@ -44,7 +44,8 @@ Two ports open, SSH on 22 and HTTP on 80. The web server is running Node.js with
 
 ## HTTP (80)
 
-<img width="1182" height="715" alt="image" src="https://github.com/user-attachments/assets/7cebef3d-d4e9-4bb7-bab5-28d3f5222761" />
+<img width="1182" height="715" alt="image" src="https://github.com/user-attachments/assets/8262a6b3-17f8-4139-9899-f55d6ef096fb" />
+
 
 
 The login page asks for an email address and password. The placeholder shows the format the app expects: `t.ramsbey@healthsmarter.hsm`. That maps neatly to the credential list we got from DeHashed.
