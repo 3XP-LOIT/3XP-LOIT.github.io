@@ -9,7 +9,7 @@ image:
 
 
 **Platform:** [Hacksmarter](https://www.hacksmarter.org)  
-**Lab:** [Second](https://www.hacksmarter.org/courses/32a677fd-323b-4236-ae70-3cda82d9c0b4/take) 
+**Lab:** [Second](https://www.hacksmarter.org/courses/32a677fd-323b-4236-ae70-3cda82d9c0b4/take)
 **Difficulty:** Medium
 
 
@@ -183,7 +183,7 @@ Two ports open. SSH on 22 and HTTP on 80. The HTTP scan identified this as a Wor
 <img width="1599" height="780" alt="image" src="https://github.com/user-attachments/assets/c7d6de9b-5052-402f-818a-7f61fef7121a" />
 
 
-### WordPress RCE via wp2shell (CVE-2025-2760)
+### WordPress RCE via wp2shell
 
 WordPress 6.9 is vulnerable to an unauthenticated RCE chain. The PoC at [https://github.com/Icex0/wp2shell-poc](https://github.com/Icex0/wp2shell-poc) abuses an SQLi-to-customizer bridge to create an administrator account
 without any prior credentials, then deploys a webshell plugin through that account.
@@ -288,3 +288,9 @@ One secret: `cg-final-flag-lab`, described as "CloudGoat Final Flag". I retrieve
 ```
 
 <img width="1149" height="294" alt="image" src="https://github.com/user-attachments/assets/bd55fa8b-99e2-4243-a95a-afa072ecddac" />
+
+Hack Smarter, not harder!!!
+
+<img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/63393212-49de-4494-88a5-e0100626014c" />
+
+
