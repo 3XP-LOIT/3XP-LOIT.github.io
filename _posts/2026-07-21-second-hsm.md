@@ -10,6 +10,7 @@ image:
 
 **Platform:** [Hacksmarter](https://www.hacksmarter.org)  
 **Lab:** [Second](https://www.hacksmarter.org/courses/32a677fd-323b-4236-ae70-3cda82d9c0b4/take)
+
 **Difficulty:** Medium
 
 
