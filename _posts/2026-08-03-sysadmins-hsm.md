@@ -8,7 +8,9 @@ image:
 ---
 
 **Platform:** [Hacksmarter](https://www.hacksmarter.org/)
+
 **Lab:** [SysAdmins](https://www.hacksmarter.org/courses/050ba47e-b38f-4638-8dad-1cc54b987a5d/take)
+
 **Difficulty:** Medium
 
 ## Objective
