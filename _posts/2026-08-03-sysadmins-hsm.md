@@ -3,6 +3,8 @@ title: "SysAdmins @ HackSmarter Writeup"
 date: 2026-08-03
 categories: [HackSmarter, Linux]
 tags: [snmpv3, credential-stuffing, cve-2025-32463]
+image:
+  path: /assets/sysadmin.png
 ---
 
 **Platform:** [Hacksmarter](https://www.hacksmarter.org/)
