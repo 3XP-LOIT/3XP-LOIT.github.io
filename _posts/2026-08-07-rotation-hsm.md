@@ -3,6 +3,8 @@ title: "Rotation @ HackSmarter Writeup"
 date: 2026-08-07
 categories: [HackSmarter, Aws]
 tags: [aws, mfa-bypass, tag-abuse, secrets-manager]
+image:
+  path: /assets/rotation.png
 ---
 
 **PLatform:** [Hacksmarter](https://www.hacksmarter.org/)
