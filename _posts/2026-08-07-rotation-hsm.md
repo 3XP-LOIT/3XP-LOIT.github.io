@@ -8,7 +8,9 @@ image:
 ---
 
 **PLatform:** [Hacksmarter](https://www.hacksmarter.org/)
+
 **Lab:** [Rotation](https://www.hacksmarter.org/courses/f3c1e08a-6302-467d-8c74-4c18d74cead0)
+
 **Difficulty:** Medium
 
 
