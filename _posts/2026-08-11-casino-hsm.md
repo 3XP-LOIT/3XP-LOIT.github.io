@@ -1,7 +1,7 @@
 ---
-title: "Casino - HackSmarter Writeup"
+title: "Casino @ HackSmarter Writeup"
 date: 2026-08-11
-categories: [HackSmargeter, Linux]
+categories: [HackSmarter, Linux]
 tags: [ssti, ssh-key-leak, log-disclosure]
 image:
   path: /assets/casino.png
