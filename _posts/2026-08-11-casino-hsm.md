@@ -234,3 +234,7 @@ HSM{g30rg3_n33ds_b3tt3r_ssh_k3y_p3rms}
 root@8b5b653a9a12:~# cat /root/root.txt
 HSM{r3s0rt_w1f1_c0mpete_syst3m_pwn3d!}
 ```
+
+**Happy hacking!!!!**
+
+<img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/8a219b33-67ff-478a-a469-0e356e29dcb5" />
