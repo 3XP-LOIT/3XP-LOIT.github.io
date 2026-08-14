@@ -11,7 +11,7 @@ image:
 
 **Lab: IOT Connect**
 
-**Difficulty: Medium**
+**Difficulty: Intermediate**
 
 
 ## Introduction
