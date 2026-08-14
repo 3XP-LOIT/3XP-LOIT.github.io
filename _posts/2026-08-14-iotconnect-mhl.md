@@ -2,12 +2,12 @@
 title: "IOT Connect - Broadcast Reciever"
 date: 2026-08-14
 categories: [Mobile, Android]
-tags: [android, broadcast-receiver, reverse-engineering, aes, mobile-hacking-lab]
+tags: [android, broadcast-receiver, aes]
 image:
   path: /assets/iot.png
 ---
 
-**Platform:** [Mobile Hacking Lab](https://academy.mobilehackinglab.com/)
+**Platform:** [Mobile Hacking Lab](https://www.mobilehackinglab.com/)
 
 **Lab: IOT Connect**
 
@@ -34,8 +34,7 @@ So there's clearly a role check happening somewhere. The question was whether th
 
 ## Recon: Manifest Analysis
 
-Decompiling the APK with jadx and pulling `AndroidManifest.xml`, one component
-stood out immediately:
+Decompiling the APK with jadx and pulling `AndroidManifest.xml`, one component stood out immediately:
 
 ```xml
 <receiver
@@ -54,7 +53,7 @@ That alone was enough to know the surface was reachable. The next question was w
 
 ## Static Analysis: The Receiver Logic
 
-The real logic lives in a *dynamically* registered receiver inside `CommunicationManager.initialize()`:
+The real logic lives in a dynamically registered receiver inside `CommunicationManager.initialize()`:
 
 ```kotlin
 override fun onReceive(context: Context?, intent: Intent?) {
@@ -69,8 +68,7 @@ override fun onReceive(context: Context?, intent: Intent?) {
 }
 ```
 
-So there *is* a real check here - `Checker.check_key(key)` - not just an open door. This is the actual authorization boundary for the privileged action. Whatever the "guest" UI was doing, it's irrelevant to this code path; this
-receiver will act on any broadcast that supplies a correct `key`, from anywhere.
+So there is a real check here, `Checker.check_key(key)`. This is the actual authorization boundary for the privileged action. Whatever the "guest" UI was doing, it's irrelevant to this code path; this receiver will act on any broadcast that supplies a correct `key`, from anywhere.
 
 ## Exploitation: Breaking Checker.check_key()
 
@@ -123,11 +121,11 @@ for candidate in range(1000):
             print(f"Valid key: {candidate:03d}")
 ```
 
-This ran and returned a single hit: `345`.
+This ran and returned a hit: `345`.
 
 ## Exploitation: Firing the Broadcast
 
-With a valid key, triggering the master switch didn't require the app's UI, a login, or any elevated privileges - just `adb`:
+With a valid key, triggering the master switch didn't require the app's UI, a login, or any elevated privileges, just `adb`:
 
 ```bash
 ~> /mobile_hacking_lab/iot_connect adb shell am broadcast -a MASTER_ON --ei key 345
@@ -145,7 +143,7 @@ The toast confirmed it: full master-switch activation, without ever passing thro
 
 ## Root Cause
 
-The vulnerability isn't simply "exported receiver" - plenty of exported receivers are safe if they don't gate anything sensitive. The real issue is a **misplaced trust boundary**:
+The vulnerability isn't simply "exported receiver", plenty of exported receivers are safe if they don't gate anything sensitive. The real issue is a **misplaced trust boundary**:
 
 - The app implemented an authorization check (`Checker.check_key()`), but that check lived behind a component reachable by any app on the device, not just the legitimate UI flow.
 - The "guest" restriction lived entirely in the Activity layer (`MasterSwitchActivity`), completely disconnected from the actual privileged action.
