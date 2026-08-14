@@ -9,7 +9,7 @@ image:
 
 **Platform:** [Mobile Hacking Lab](https://academy.mobilehackinglab.com/)
 
-**Lab:** [IOT Connect]
+**Lab: IOT Connect**
 
 **Difficulty: Medium**
 
