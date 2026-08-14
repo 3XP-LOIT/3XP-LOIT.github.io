@@ -1,5 +1,5 @@
 ---
-title: "IOT Connect - Bypassing a Broadcast Receiver's Client-Side Guard"
+title: "IOT Connect - Broadcast Reciever"
 date: 2026-08-14
 categories: [Mobile, Android]
 tags: [android, broadcast-receiver, reverse-engineering, aes, mobile-hacking-lab]
