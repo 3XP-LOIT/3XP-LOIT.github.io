@@ -253,3 +253,6 @@ A fresh, zero-byte file, owned by the app's own UID, timestamped exactly when th
 ## Mitigations
 
 Intent-supplied URLs shouldn't be loaded into a WebView without an allowlist of trusted origins. Memory-leak and byte-level native sinks have no business sitting behind a `@JavascriptInterface`, since anything exposed there is reachable by any page the WebView renders. Buffer copies need to be checked against the destination's actual size rather than the source's length. Native libraries should ship with stack canaries wherever the toolchain supports them. Attacker-influenced data should never reach `system()` or `exec*()` directly, regardless of how internal the calling function looks.
+
+
+<img width="959" height="705" alt="image" src="https://github.com/user-attachments/assets/91846095-f5ae-43ca-a605-af84fbcb73e0" />
