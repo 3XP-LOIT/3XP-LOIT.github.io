@@ -41,42 +41,47 @@ Accessing the IP redirected to a hostname, which I added to `/etc/hosts`.
 10.100.0.30 halcyonfm.local
 ```
 
-![Halcyon FM homepage](/assets/img/posts/halcyon-fm/01-homepage.png)
+<img width="1388" height="668" alt="image" src="https://github.com/user-attachments/assets/547a64e2-c981-49ed-919f-05d2adfc1d1d" />
+
 _The public site — schedule, on-air banner, and a Pitch a show link_
 
 ### Vhost fuzzing
 
 ```
-~> /webverse/halcyon ffuf -u 'http://10.100.0.30' -H 'Host: FUZZ.halcyonfm.local' \
-   -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -fs 138
+~> /webverse/halcyon ffuf -u 'http://10.100.0.30' -H 'Host: FUZZ.halcyonfm.local' -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -fs 138
 
-studio                  [Status: 302, Size: 199, Words: 18, Lines: 6, Duration: 191ms]
+studio                [Status: 302, Size: 199, Words: 18, Lines: 6, Duration: 191ms]
 ```
 
-One vhost: `studio.halcyonfm.local`. Keeping that for later and going back to the main site, which has a "Pitch a show" page.
+One vhost: `studio.halcyonfm.local`. Let's keep that for later and going back to the main site, which has a "Pitch a show" page.
 
 ## From "Pitch a show" to SSRF
 
-![Pitch a show form](/assets/img/posts/halcyon-fm/02-pitch-a-show.png)
+<img width="1362" height="779" alt="image" src="https://github.com/user-attachments/assets/2405b4c9-efb5-47cf-aee4-bef15660137d" />
+
 _The pitch form — show name, host name, artwork/demo link, description_
 
 The pitch form takes a show name, host name, and a link to artwork or a demo mix, plus a description. The demo link field runs a server-side fetch to confirm it resolves before letting you submit, which is the interesting part.
 
-![import-preview request and response in Burp](/assets/img/posts/halcyon-fm/03-import-preview.png)
+<img width="1441" height="373" alt="image" src="https://github.com/user-attachments/assets/fb82089a-781a-471f-96cd-10b4d2b52d81" />
+
 _POST /api/shows/import-preview — feed_url and is_dev in the body_
 
 ```json
 {"feed_url":"http://10.8.0.148:8000/test","is_dev":false}
 ```
 
-![demo.js source showing is_dev comment](/assets/img/posts/halcyon-fm/04-demo-js.png)
-_static/js/demo.js — the full response body is only returned "in developer mode"_
 
-A `static/js/demo.js` file on the site includes a comment that the full response body is only returned to the caller in developer mode, gated behind an `is_dev` flag in the same request.
+A `static/js/demo.js` file on the site includes a comment that the full response body is only returned to the caller in developer mode, gated behind an `is_dev` parameter in the same request.
+
+<img width="1444" height="385" alt="image" src="https://github.com/user-attachments/assets/87879330-6930-4cad-818f-a3a4fc3e0f4c" />
+
+_static/js/demo.js — the full response body is only returned "in developer mode"_
 
 Flipping `is_dev` to `true` and pointing `feed_url` at a listener on my own machine confirmed the server makes the request and, with the flag set, hands back the response body.
 
-![Burp showing is_dev=true request and callback response](/assets/img/posts/halcyon-fm/05-is-dev-true.png)
+<img width="1283" height="341" alt="image" src="https://github.com/user-attachments/assets/6ce7a042-e955-4622-b534-494959e81f2d" />
+
 
 ```
 ~> /webverse/halcyon python3 -m http.server 8000
@@ -85,16 +90,18 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 10.8.0.1 - - [16/Oct/2026 06:26:47] "GET /test HTTP/1.1" 404 -
 ```
 
-That's a classic server-side request forgery primitive with full response disclosure. Next step: point it inward.
+That's a classic server-side request forgery primitive with full response disclosure. The next thing I tried was to point it at itself to see if I could access internal resources.
 
 ## Internal API via SSRF
 
 Looping `feed_url` through `127.0.0.1` on a handful of ports landed on 8080, which returned JSON from what looks like an internal operations API, including a pointer to `swagger.json`.
 
-![Burp showing SSRF to 127.0.0.1:8080 revealing swagger.json](/assets/img/posts/halcyon-fm/06-internal-8080.png)
+<img width="1290" height="327" alt="image" src="https://github.com/user-attachments/assets/af824311-c949-4dbd-9216-c4ff26993c10" />
+
 _feed_url=http://127.0.0.1:8080/swagger.json_
 
-![Burp showing full swagger.json response body](/assets/img/posts/halcyon-fm/07-swagger-json.png)
+<img width="1296" height="547" alt="image" src="https://github.com/user-attachments/assets/fae91bdd-8814-434f-b84b-9825fc03c95f" />
+
 
 The spec describes a "Halcyon FM Ops API" with three endpoints of interest:
 
@@ -104,7 +111,8 @@ The spec describes a "Halcyon FM Ops API" with three endpoints of interest:
 
 ### Viewing users
 
-![Burp showing /api/v1/users response with four accounts](/assets/img/posts/halcyon-fm/08-users.png)
+<img width="1295" height="373" alt="image" src="https://github.com/user-attachments/assets/3c1fa651-139c-4786-99c6-bb7cd88b94cb" />
+
 
 Four accounts came back:
 
