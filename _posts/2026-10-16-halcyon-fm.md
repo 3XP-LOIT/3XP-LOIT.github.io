@@ -6,8 +6,9 @@ image:
   path: /assets/halcyon.webp
 ---
 
-**Platform:** https://dashboard.webverselabs-pro.com
-**Lab:** https://dashboard.webverselabs-pro.com/labs/halcyonfm
+**Platform:** [Webverselabs](https://dashboard.webverselabs-pro.com)
+
+**Lab:** [Halcyon FM](https://dashboard.webverselabs-pro.com/labs/halcyonfm)
 
 ## Briefing
 
