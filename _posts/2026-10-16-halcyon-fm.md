@@ -10,6 +10,8 @@ image:
 
 **Lab:** [Halcyon FM](https://dashboard.webverselabs-pro.com/labs/halcyonfm)
 
+**Difficulty:** Hard
+
 ## Briefing
 
 Halcyon FM is a small listener-supported community station in Asheville. Marlow and a rotating crew of volunteers run the whole operation off a couple of machines in the back of the studio. The public site carries the schedule and takes show pitches, and the playout console the crew uses to run automation lives on its own subdomain.
